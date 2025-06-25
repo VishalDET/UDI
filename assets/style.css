@@ -2219,15 +2219,7 @@ textarea.form-control {
     
 }
 
-.color-loacker{
-    color: rgba(217, 9, 18,1);
-}
-.border-loacker{
-    border: 1px solid rgba(217, 9, 18,0.25);
-}
-.bg-loacker{
-    background: rgba(217, 9 1,8,0.25) !important;
-}
+
 .icons-at-loacker{
     background: rgba(217, 9, 1,0.05) ;
     width: 50px;
@@ -2518,4 +2510,24 @@ textarea.form-control {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+.color-loacker{
+    color: rgba(217, 9, 18,1);
+}
+.border-loacker{
+    border: 1px solid rgba(217, 9, 18,0.25);
+}
+.bg-loacker{
+    background: rgba(217, 9 1,8,0.25) !important;
+}
+
+/* Tabasco */
+.color-tabasco{
+    color: rgba(217, 2, 1,1);
+}
+.border-tabasco{
+    border: 1px solid rgba(217, 2, 1,0.25);
+}
+.bg-tabasco{
+    background: rgba(217, 2, 1,0.25) !important;
 }
