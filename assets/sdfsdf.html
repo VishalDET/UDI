@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Collaboration</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.3/cdn.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <main class="bg-gray-50 min-h-screen p-4" x-data="{
+    activeTab: 'team',
+    teamView: 'grid',
+    teamMembers: [
+      { id: 1, name: 'Alex Johnson', role: 'Project Manager', avatar: '/api/placeholder/40/40', status: 'online' },
+      { id: 2, name: 'Sarah Williams', role: 'UI Designer', avatar: '/api/placeholder/40/40', status: 'offline' },
+      { id: 3, name: 'Michael Brown', role: 'Backend Developer', avatar: '/api/placeholder/40/40', status: 'away' },
+      { id: 4, name: 'Emily Davis', role: 'Frontend Developer', avatar: '/api/placeholder/40/40', status: 'online' },
+      { id: 5, name: 'David Wilson', role: 'QA Engineer', avatar: '/api/placeholder/40/40', status: 'online' },
+      { id: 6, name: 'Jessica Lee', role: 'Product Owner', avatar: '/api/placeholder/40/40', status: 'offline' }
+    ],
+    meetings: [
+      { id: 1, title: 'Sprint Planning', date: '2025-04-02', startTime: '10:00', endTime: '11:00', participants: [1, 2, 3, 4, 5] },
+      { id: 2, title: 'Design Review', date: '2025-04-02', startTime: '14:00', endTime: '15:00', participants: [1, 2, 4] },
+      { id: 3, title: 'Daily Standup', date: '2025-04-03', startTime: '09:30', endTime: '09:45', participants: [1, 2, 3, 4, 5, 6] },
+      { id: 4, title: 'Backend Sync', date: '2025-04-04', startTime: '11:00', endTime: '12:00', participants: [1, 3, 5] }
+    ],
+    newMeeting: {
+      title: '',
+      date: '',
+      startTime: '',
+      endTime: '',
+      participants: []
+    },
+    selectedDate: '2025-04-02',
+    days: [],
+    initCalendar() {
+      const today = moment();
+      this.selectedDate = today.format('YYYY-MM-DD');
+      this.days = [];
+      
+      // Generate 14 days from today
+      for (let i = -3; i < 11; i++) {
+        const day = moment().add(i, 'days');
+        this.days.push({
+          date: day.format('YYYY-MM-DD'),
+          dayName: day.format('ddd'),
+          dayNumber: day.format('D'),
+          isToday: day.isSame(today, 'day')
+        });
+      }
+    },
+    getMeetingsForDate(date) {
+      return this.meetings.filter(meeting => meeting.date === date);
+    },
+    getParticipantNames(participantIds) {
+      return participantIds.map(id => {
+        const member = this.teamMembers.find(m => m.id === id);
+        return member ? member.name : '';
+      }).join(', ');
+    },
+    createMeeting() {
+      if (!this.newMeeting.title || !this.newMeeting.date || !this.newMeeting.startTime || !this.newMeeting.endTime) {
+        alert('Please fill in all required fields');
+        return;
+      }
+      
+      // Create new meeting
+      const newMeeting = {
+        id: this.meetings.length + 1,
+        title: this.newMeeting.title,
+        date: this.newMeeting.date,
+        startTime: this.newMeeting.startTime,
+        endTime: this.newMeeting.endTime,
+        participants: this.newMeeting.participants
+      };
+      
+      // Add to meetings array
+      this.meetings.push(newMeeting);
+      
+      // Reset form
+      this.newMeeting = {
+        title: '',
+        date: '',
+        startTime: '',
+        endTime: '',
+        participants: []
+      };
+      
+      // Close modal
+      document.getElementById('meetingModal').classList.add('hidden');
+    }
+  }" x-init="initCalendar">
+    <!-- Main Content -->
+    <div class="container mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <!-- Tabs Navigation -->
+      <div class="bg-gray-800 text-white p-4">
+        <div class="flex items-center justify-between">
+          <div class="flex space-x-4">
+            <button 
+              @click="activeTab = 'team'" 
+              :class="{'bg-blue-600': activeTab === 'team', 'hover:bg-gray-700': activeTab !== 'team'}"
+              class="px-4 py-2 rounded-md transition">
+              <i class="fas fa-users mr-2"></i>Team
+            </button>
+            <button 
+              @click="activeTab = 'meetings'" 
+              :class="{'bg-blue-600': activeTab === 'meetings', 'hover:bg-gray-700': activeTab !== 'meetings'}"
+              class="px-4 py-2 rounded-md transition">
+              <i class="fas fa-calendar-alt mr-2"></i>Meetings
+            </button>
+          </div>
+          <h1 class="text-xl font-bold">Team Collaboration</h1>
+        </div>
+      </div>
+      
+      <!-- Team Members Tab -->
+      <div x-show="activeTab === 'team'" class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-semibold">Team Members</h2>
+          <div class="flex space-x-2">
+            <button 
+              @click="teamView = 'grid'" 
+              :class="{'bg-blue-600 text-white': teamView === 'grid', 'bg-gray-200': teamView !== 'grid'}"
+              class="px-3 py-1 rounded">
+              <i class="fas fa-th-large"></i>
+            </button>
+            <button 
+              @click="teamView = 'list'" 
+              :class="{'bg-blue-600 text-white': teamView === 'list', 'bg-gray-200': teamView !== 'list'}"
+              class="px-3 py-1 rounded">
+              <i class="fas fa-list"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Grid View -->
+        <div x-show="teamView === 'grid'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <template x-for="member in teamMembers" :key="member.id">
+            <div class="bg-white rounded-lg overflow-hidden shadow border border-gray-200 hover:shadow-lg transition">
+              <div class="p-6">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <img :src="member.avatar" alt="Profile" class="w-16 h-16 rounded-full object-cover">
+                    <span 
+                      :class="{
+                        'bg-green-500': member.status === 'online',
+                        'bg-yellow-500': member.status === 'away',
+                        'bg-gray-500': member.status === 'offline'
+                      }"
+                      class="absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-white">
+                    </span>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="font-semibold text-lg" x-text="member.name"></h3>
+                    <p class="text-gray-600" x-text="member.role"></p>
+                    <p class="text-sm capitalize" 
+                       :class="{
+                         'text-green-600': member.status === 'online',
+                         'text-yellow-600': member.status === 'away',
+                         'text-gray-600': member.status === 'offline'
+                       }"
+                       x-text="member.status"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+        
+        <!-- List View -->
+        <div x-show="teamView === 'list'" class="overflow-hidden border border-gray-200 rounded-lg">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Team Member</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <template x-for="member in teamMembers" :key="member.id">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <div class="relative flex-shrink-0 h-10 w-10">
+                        <img :src="member.avatar" alt="Profile" class="h-10 w-10 rounded-full">
+                        <span 
+                          :class="{
+                            'bg-green-500': member.status === 'online',
+                            'bg-yellow-500': member.status === 'away',
+                            'bg-gray-500': member.status === 'offline'
+                          }"
+                          class="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white">
+                        </span>
+                      </div>
+                      <div class="ml-4">
+                        <div class="text-sm font-medium text-gray-900" x-text="member.name"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900" x-text="member.role"></div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span 
+                      :class="{
+                        'bg-green-100 text-green-800': member.status === 'online',
+                        'bg-yellow-100 text-yellow-800': member.status === 'away',
+                        'bg-gray-100 text-gray-800': member.status === 'offline'
+                      }"
+                      class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full capitalize" x-text="member.status"></span>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Meetings Tab -->
+      <div x-data="meetingsApp" x-show="activeTab === 'meetings'" class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-semibold">Meetings & Calendar</h2>
+          <button 
+            @click="openNewMeetingModal()"
+            class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 flex items-center">
+            <i class="fas fa-plus mr-2"></i> New Meeting
+          </button>
+        </div>
+        
+        <!-- Calendar View -->
+        <div class="mb-8">
+            <div class="flex overflow-x-auto pb-2 mb-4 py-2">
+                <template x-for="day in days" :key="day.date">
+                <div 
+                    @click="selectedDate = day.date"
+                    :class="{
+                    'bg-blue-600 text-white': selectedDate === day.date,
+                    'bg-white hover:bg-gray-100': selectedDate !== day.date,
+                    'ring-2 ring-blue-500 ring-opacity-50': day.isToday
+                    }"
+                    class="flex flex-col items-center p-2 cursor-pointer min-w-[80px] rounded-lg mx-1 border">
+                    <p class="text-sm font-medium" x-text="day.dayName"></p>
+                    <p class="text-xl font-bold" x-text="day.dayNumber"></p>
+                    <p class="text-sm font-normal" x-text="day.monthName"></p>
+                </div>
+                </template>
+            </div>
+          
+          <!-- Meetings for Selected Date -->
+          <div class="bg-white rounded-lg shadow">
+            <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+              <h3 class="text-lg font-semibold" x-text="'Meetings for ' + moment(selectedDate).format('dddd, MMMM D, YYYY')"></h3>
+              <button 
+                @click="openNewMeetingModal()"
+                class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+                <i class="fas fa-plus mr-1"></i> Add Meeting
+              </button>
+            </div>
+            <div class="divide-y divide-gray-200">
+              <template x-for="meeting in getMeetingsForDate(selectedDate)" :key="meeting.id">
+                <div class="p-6 hover:bg-gray-50">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h4 class="text-lg font-semibold" x-text="meeting.title"></h4>
+                      <p class="text-gray-600">
+                        <span x-text="meeting.startTime"></span> - <span x-text="meeting.endTime"></span>
+                      </p>
+                      <p class="mt-1 text-sm text-gray-500" x-show="meeting.description" x-text="meeting.description"></p>
+                      <p class="text-sm text-gray-500 mt-1">
+                        <span>Participants: </span>
+                        <span x-text="getParticipantNames(meeting.participants)"></span>
+                      </p>
+                    </div>
+                    <div class="flex space-x-2">
+                      <button @click="joinMeeting(meeting)" class="p-2 text-purple-600 hover:bg-purple-100 rounded-full" title="Join Meeting">
+                        <i class="fas fa-video"></i>
+                      </button>
+                      <button @click="openEditMeetingModal(meeting)" class="p-2 text-blue-600 hover:bg-blue-100 rounded-full" title="Edit Meeting">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button @click="deleteMeeting(meeting.id)" class="p-2 text-red-600 hover:bg-red-100 rounded-full" title="Delete Meeting">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+              <div x-show="getMeetingsForDate(selectedDate).length === 0" class="p-6 text-center text-gray-500">
+                No meetings scheduled for this day
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Upcoming Meetings -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Upcoming Meetings</h3>
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Meeting</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Participants</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <template x-for="meeting in meetings" :key="meeting.id">
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="text-sm font-medium text-gray-900" x-text="meeting.title"></div>
+                      <div x-show="meeting.isRecurring" class="text-xs text-gray-500">
+                        <i class="fas fa-sync-alt mr-1"></i>
+                        <span x-text="meeting.recurringPattern.charAt(0).toUpperCase() + meeting.recurringPattern.slice(1)"></span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="text-sm text-gray-900">
+                        <span x-text="moment(meeting.date).format('MMM D, YYYY')"></span>
+                        <span x-text="' • ' + meeting.startTime + ' - ' + meeting.endTime"></span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="text-sm text-gray-900" x-text="getParticipantNames(meeting.participants)"></div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                      <div class="flex space-x-3">
+                        <button @click="joinMeeting(meeting)" class="text-purple-600 hover:text-purple-900" title="Join Meeting">
+                          <i class="fas fa-video"></i>
+                        </button>
+                        <button @click="openEditMeetingModal(meeting)" class="text-blue-600 hover:text-blue-900" title="Edit Meeting">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button @click="deleteMeeting(meeting.id)" class="text-red-600 hover:text-red-900" title="Delete Meeting">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- Include Meeting Modal -->
+        <div id="meetingModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+            <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+              </div>
+          
+              <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <div class="sm:flex sm:items-start">
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                      <h3 class="text-lg leading-6 font-medium text-gray-900" x-text="editMode ? 'Edit Meeting' : 'New Meeting'"></h3>
+                      
+                      <div class="mt-4">
+                        <form @submit.prevent="saveMeeting">
+                          <div class="mb-4">
+                            <label for="meetingTitle" class="block text-sm font-medium text-gray-700">Title</label>
+                            <input type="text" id="meetingTitle" x-model="newMeeting.title" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                          </div>
+                          
+                          <div class="mb-4">
+                            <label for="meetingDate" class="block text-sm font-medium text-gray-700">Date</label>
+                            <input type="date" id="meetingDate" x-model="newMeeting.date" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                          </div>
+                          
+                          <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                              <label for="startTime" class="block text-sm font-medium text-gray-700">Start Time</label>
+                              <input type="time" id="startTime" x-model="newMeeting.startTime" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            
+                            <div>
+                              <label for="endTime" class="block text-sm font-medium text-gray-700">End Time</label>
+                              <input type="time" id="endTime" x-model="newMeeting.endTime" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                          </div>
+                          
+                          <div class="mb-4">
+                            <label for="meetingDescription" class="block text-sm font-medium text-gray-700">Description</label>
+                            <textarea id="meetingDescription" x-model="newMeeting.description" rows="3" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                          </div>
+                          
+                          <div class="mb-4">
+                            <div class="flex items-center justify-between">
+                              <label class="block text-sm font-medium text-gray-700">Participants</label>
+                              <div class="relative">
+                                <input type="text" x-model="searchTerm" placeholder="Search..." class="text-sm border border-gray-300 rounded-md shadow-sm py-1 px-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                              </div>
+                            </div>
+                            
+                            <div class="mt-2 max-h-40 overflow-y-auto border border-gray-300 rounded-md p-2">
+                              <template x-for="member in filteredTeamMembers()" :key="member.id">
+                                <div class="flex items-center py-1">
+                                  <input type="checkbox" :id="'participant-' + member.id" :value="member.id" 
+                                    :checked="isParticipantSelected(member.id)"
+                                    @click="toggleParticipant(member.id)"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                  <label :for="'participant-' + member.id" class="ml-2 block text-sm text-gray-900" x-text="member.name"></label>
+                                </div>
+                              </template>
+                              <div x-show="filteredTeamMembers().length === 0" class="py-2 text-sm text-gray-500 text-center">
+                                No members match your search
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="mb-4">
+                            <div class="flex items-center">
+                              <input type="checkbox" id="isRecurring" x-model="newMeeting.isRecurring" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                              <label for="isRecurring" class="ml-2 block text-sm text-gray-900">Recurring meeting</label>
+                            </div>
+                            
+                            <div x-show="newMeeting.isRecurring" class="mt-2">
+                              <label for="recurringPattern" class="block text-sm font-medium text-gray-700">Repeat</label>
+                              <select id="recurringPattern" x-model="newMeeting.recurringPattern" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="biweekly">Bi-weekly</option>
+                                <option value="monthly">Monthly</option>
+                              </select>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                  <button @click="saveMeeting" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                    Save
+                  </button>
+                  <button @click="closeModal" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+      </div>
+    </div>
+  </main>
+
+    
+
+
+  
+
+  <script for="meetingAPP">
+    document.addEventListener('alpine:init', () => {
+  Alpine.data('meetingsApp', () => ({
+    activeTab: 'meetings',
+    meetings: [],
+    selectedDate: moment().format('YYYY-MM-DD'),
+    days: [],
+    newMeeting: {
+      id: null,
+      title: '',
+      date: '',
+      startTime: '',
+      endTime: '',
+      description: '',
+      participants: [],
+      isRecurring: false,
+      recurringPattern: 'weekly'
+    },
+    editMode: false,
+    teamMembers: [
+      { id: 1, name: 'Vishal Prajapati' },
+      { id: 2, name: 'Kulddep Yadav' },
+      { id: 3, name: 'Ajay Yadav' },
+      { id: 4, name: 'Durgesh Suthar' },
+      { id: 5, name: 'Radhika Sharma' },
+      { id: 6, name: 'Satyajeet Bhosle' }
+
+    ],
+    searchTerm: '',
+    
+    init() {
+      // Load meetings from localStorage if available
+      const savedMeetings = localStorage.getItem('meetings');
+      this.meetings = savedMeetings ? JSON.parse(savedMeetings) : this.generateSampleMeetings();
+      
+      // Initialize calendar days
+      this.generateCalendarDays();
+      
+      // Set up event listeners
+      this.$watch('meetings', (value) => {
+        localStorage.setItem('meetings', JSON.stringify(value));
+      });
+    },
+    
+    generateCalendarDays() {
+      const today = moment();
+      this.days = [];
+      
+      for (let i = -3; i < 31; i++) {
+        const date = moment().add(i, 'days');
+        this.days.push({
+          date: date.format('YYYY-MM-DD'),
+          dayName: date.format('ddd'),
+          dayNumber: date.format('D'),
+          monthName: date.format('MMMM'),
+          isToday: date.isSame(today, 'day')
+        });
+      }
+    },
+    
+    generateSampleMeetings() {
+      const today = moment().format('YYYY-MM-DD');
+      const tomorrow = moment().add(1, 'day').format('YYYY-MM-DD');
+      
+      return [
+        {
+          id: 1,
+          title: 'Weekly Team Standup',
+          date: today,
+          startTime: '09:00 AM',
+          endTime: '09:30 AM',
+          description: 'Weekly team status update and planning',
+          participants: [1, 2, 3, 4, 5],
+          isRecurring: true,
+          recurringPattern: 'weekly'
+        },
+        {
+          id: 2,
+          title: 'Project Review',
+          date: today,
+          startTime: '02:00 PM',
+          endTime: '03:00 PM',
+          description: 'Review progress on Q2 project milestones',
+          participants: [1, 3, 5],
+          isRecurring: false,
+          recurringPattern: null
+        },
+        {
+          id: 3,
+          title: 'Client Presentation',
+          date: tomorrow,
+          startTime: '11:00 AM',
+          endTime: '12:00 PM',
+          description: 'Present new features to key client',
+          participants: [1, 2, 4],
+          isRecurring: false,
+          recurringPattern: null
+        }
+      ];
+    },
+    
+    getMeetingsForDate(date) {
+      return this.meetings.filter(meeting => meeting.date === date);
+    },
+    
+    getParticipantNames(participantIds) {
+      const names = participantIds.map(id => {
+        const member = this.teamMembers.find(m => m.id === id);
+        return member ? member.name : 'Unknown';
+      });
+      
+      return names.join(', ');
+    },
+    
+    openNewMeetingModal() {
+      this.editMode = false;
+      this.resetNewMeeting();
+      this.newMeeting.date = this.selectedDate;
+      document.getElementById('meetingModal').classList.remove('hidden');
+    },
+    
+    openEditMeetingModal(meeting) {
+      this.editMode = true;
+      this.newMeeting = JSON.parse(JSON.stringify(meeting));
+      document.getElementById('meetingModal').classList.remove('hidden');
+    },
+    
+    closeModal() {
+      document.getElementById('meetingModal').classList.add('hidden');
+      this.resetNewMeeting();
+    },
+    
+    resetNewMeeting() {
+      this.newMeeting = {
+        id: null,
+        title: '',
+        date: this.selectedDate,
+        startTime: '',
+        endTime: '',
+        description: '',
+        participants: [],
+        isRecurring: false,
+        recurringPattern: 'weekly'
+      };
+    },
+    
+    saveMeeting() {
+      if (!this.validateMeetingForm()) {
+        return;
+      }
+      
+      if (this.editMode) {
+        // Update existing meeting
+        const index = this.meetings.findIndex(m => m.id === this.newMeeting.id);
+        if (index !== -1) {
+          this.meetings[index] = {...this.newMeeting};
+        }
+      } else {
+        // Add new meeting
+        const newId = this.meetings.length > 0 
+          ? Math.max(...this.meetings.map(m => m.id)) + 1 
+          : 1;
+        
+        this.meetings.push({
+          ...this.newMeeting,
+          id: newId
+        });
+      }
+      
+      this.closeModal();
+      // Sort meetings by date and time
+      this.meetings.sort((a, b) => {
+        const dateCompare = moment(a.date).diff(moment(b.date));
+        if (dateCompare !== 0) return dateCompare;
+        return moment(a.startTime, 'hh:mm A').diff(moment(b.startTime, 'hh:mm A'));
+      });
+    },
+    
+    deleteMeeting(meetingId) {
+      if (confirm('Are you sure you want to delete this meeting?')) {
+        this.meetings = this.meetings.filter(m => m.id !== meetingId);
+      }
+    },
+    
+    joinMeeting(meeting) {
+      // This would typically launch a video conferencing tool
+      alert(`Joining meeting: ${meeting.title}`);
+      // Here you could integrate with a video API like Zoom, Google Meet, etc.
+    },
+    
+    validateMeetingForm() {
+      if (!this.newMeeting.title) {
+        alert('Please enter a meeting title');
+        return false;
+      }
+      
+      if (!this.newMeeting.date) {
+        alert('Please select a date');
+        return false;
+      }
+      
+      if (!this.newMeeting.startTime || !this.newMeeting.endTime) {
+        alert('Please specify both start and end times');
+        return false;
+      }
+      
+      // Validate that end time is after start time
+      const startMoment = moment(this.newMeeting.startTime, 'hh:mm A');
+      const endMoment = moment(this.newMeeting.endTime, 'hh:mm A');
+      
+      if (endMoment.isSameOrBefore(startMoment)) {
+        alert('End time must be after start time');
+        return false;
+      }
+      
+      if (this.newMeeting.participants.length === 0) {
+        alert('Please select at least one participant');
+        return false;
+      }
+      
+      return true;
+    },
+    
+    toggleParticipant(participantId) {
+      const index = this.newMeeting.participants.indexOf(participantId);
+      if (index === -1) {
+        this.newMeeting.participants.push(participantId);
+      } else {
+        this.newMeeting.participants.splice(index, 1);
+      }
+    },
+    
+    isParticipantSelected(participantId) {
+      return this.newMeeting.participants.includes(participantId);
+    },
+    
+    filteredTeamMembers() {
+      if (!this.searchTerm) return this.teamMembers;
+      
+      const term = this.searchTerm.toLowerCase();
+      return this.teamMembers.filter(member => 
+        member.name.toLowerCase().includes(term)
+      );
+    }
+  }));
+});
+    
+    
+    </script>
+
+</body>
+</html>

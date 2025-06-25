@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="assets/style.css" />
+    <script src="assets/script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/54993c5e76edc6f01a170163891279ff?family=Vanitas-Extrabold" rel="stylesheet">
+</head>
+<body>
+    <header class="udi-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/" class="udi-logo-container">
+                    <!-- <strong class="headings display-5 text-udi">UDI</strong> -->
+                    <img src="assets/images/Logos/udi/udi.png" alt="UDI Logo" class="udi-logo w-100">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="d-none d-lg-block">
+                    <ul class="list-unstyled d-flex mb-0 gap-3">
+                        <li><a href="Index.html" class="udi-nav-link ls-2 text-uppercase">Home</a></li>
+                        <li><a href="About-us.html" class="udi-nav-link ls-2 text-uppercase">About Us</a></li>
+                        <li><a href="Portfolio.html" class="udi-nav-link ls-2 text-uppercase">Portfolio</a></li>
+                        <li><a href="Excellency.html" class="udi-nav-link ls-2 text-uppercase">Excellency</a></li>
+                        <li><a href="Contact-us.html" class="udi-nav-link ls-2 text-uppercase active">Contact Us</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Hamburger Button -->
+                <button class="udi-hamburger d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Off-Canvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li class="mb-3"><a href="Index.html" class="udi-nav-link active">Home</a></li>
+                <li class="mb-3"><a href="About-us.html" class="udi-nav-link">About Us</a></li>
+                <li class="mb-3"><a href="Excellency.html" class="udi-nav-link">Excellency</a></li>
+                <li class="mb-3"><a href="Portfolio.html" class="udi-nav-link">Portfolio</a></li>
+                <li class="mb-3"><a href="Contact-us.html" class="udi-nav-link">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <!-- Main Content Area -->
+    <main class="udi-content main-content">
+        <section class="hero-section text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-4 fw-bold mb-4 vanitasbold ls-2">Contact Us</h2>
+                        <p class="lead mb-4">Setting new standards in FMCG distribution with cutting-edge infrastructure, strategic partnerships, and innovative resources.</p>
+                       
+                    </div>
+                </div>
+        </section>
+        <div class="bg-white p-5">
+            <div class="map-container">
+                <!-- Google Maps Iframe -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.7379480914165!2d72.86096187596604!3d19.11914875061506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c82558fdd2a5%3A0xff70781f34482c4b!2sUnited%20Distributors%20Inc!5e0!3m2!1sen!2sin!4v1743085828304!5m2!1sen!2sin" 
+                    class="map-iframe rounded" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+    
+                <!-- Contact Info Overlay -->
+                <div class="map-overlay border-1 border-primary">
+                    <!-- <div class="d-flex justify-content-end">
+                        <a href="http://" class="py-2 px-3 bg-white mb-3 rounded btn btn-primary">Get Direction <i class="fa-solid fa-arrows-split-up-and-left"></i></a>
+                    </div> -->
+                    <div class="contact-cards shadow-md mx-auto overflow-hidden">
+                        <div class="contact-card" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Visit Us</h3>
+                            <p>United Distributors India, F5, PINNACLE BUSINESS PARK, 9A, Mahakali Caves Rd, Shanti Nagar, Andheri East, Mumbai, Maharashtra 400093 - <a href="" target="_blank" class="text-seconday text-underline fw-bold">Get Direction <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+                        </div>
+                        
+                        <div class="contact-card" data-aos="fade-up" data-aos-duration="2400">
+                            <div class="card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                            <p>
+                                <a href="tel:+14155557890">+91-XXXXXXXXXX</a><br>
+                                <a href="tel:+14155557890">+91-XXXXXXXXXX</a><br>
+                                Mon-Fri <br> 9am-5pm IST</p>
+                        </div>
+                        
+                        <div class="contact-card h-100" data-aos="fade-up" data-aos-duration="1600">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email Us</h3>
+                            <p>
+                                Send us your query on<br>
+                                <a href="mailto:info@udiindia.com">info@udiindia.com</a><br>
+                                We'll respond within 72 hours</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <section class="bg-section">
+                <div class="container py-5">
+                   
+                <!-- Add your main content here -->
+                <div class="contact-container" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="contact-header mb-5" data-aos="fade-down" data-aos-duration="1000">
+                        <div class="section-title text-center">
+                            <h2 data-aos="fade-down" data-aos-duration="1000">Connect with us</h2>
+                            <p class="lead" data-aos="fade-up" data-aos-duration="1000">Get in touch with us</p>
+                        </div>
+                        
+                        <p data-aos="fade-up fs-4" data-aos-duration="1200">Interested in partnering with us or learning more about our brands? Reach out to us at:</p>
+                    </div>
+                    <div class="position-relative">
+                
+                    
+                    <!-- <div class="contact-cards shadow-md">
+                        <div class="contact-card" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Visit Us</h3>
+                            <p>Vile Parle East<br>Mumbai, 400057 <a href="" target="_blank" class="text-seconday text-underline fw-bold">Get Direction <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+                        </div>
+                        
+                        <div class="contact-card" data-aos="fade-up" data-aos-duration="2400">
+                            <div class="card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+14155557890">(415) 555-7890</a><br>Mon-Fri, 9am-5pm IST</p>
+                        </div>
+                        
+                        <div class="contact-card" data-aos="fade-up" data-aos-duration="1600">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:hello@yourcompany.com">hello@udiindia.com</a><br>We'll respond within 72 hours</p>
+                        </div>
+                    </div>
+                     -->
+                    <div class="contact-form-section" data-aos="fade-up" data-aos-duration="1800">
+                        <div class="form-image" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="form-image-content">
+                                <h3>Let's Connect</h3>
+                                <p>Follow us on social media for the latest updates, offers, and insights into our world of premium brands:</p>
+                                <div class="social-links">
+                                    <a href="https://www.facebook.com/uniteddistributorsindia/" class="social-link" data-aos="fade-up" data-aos-duration="2000">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <!-- <a href="#" class="social-link" data-aos="fade-up" data-aos-duration="2000">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a> -->
+                                    <a href="https://in.linkedin.com/company/uniteddistributorsindia" class="social-link" data-aos="fade-up" data-aos-duration="2000">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/udi.india/" class="social-link" data-aos="fade-up" data-aos-duration="2000">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-content" data-aos="fade-left" data-aos-duration="1000">
+                            <h3>Send a Message</h3>
+                            <form id="contactForm" onsubmit="return handleSubmit(event)">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" class="form-control" placeholder="Enter the subject" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea id="message" class="form-control" placeholder="Type your message here" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="submit-button" data-aos="fade-up" data-aos-duration="2000">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="udi-footer">
+        <div class="container">
+            <div class="row justify-content-between mb-3">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <!-- <img src="https://via.placeholder.com/150x40" alt="Company Logo" class="mb-4"> -->
+                     <div class="display-5 fw-bold">
+                        UDI
+                     </div>
+                    <p class="mb-4">United Distributors India, F5, PINNACLE BUSINESS PARK, 9A, Mahakali Caves Rd, Shanti Nagar, Andheri East, Mumbai, Maharashtra 400093</p>
+                    <div class="udi-social-icons">
+                        <a href="#" class="udi-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="udi-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="udi-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="udi-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="udi-footer-title">Quick Links</h5>
+                    <ul class="udi-footer-links">
+                        <li><a href="#" class="udi-ftr-link text-white">About Us</a></li>
+                        <li><a href="#" class="udi-ftr-link text-white">Excellence In Distribution</a></li>
+                        <li><a href="#" class="udi-ftr-link text-white">Portfolio</a></li>
+                        <li><a href="#" class="udi-ftr-link text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <!-- <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="udi-footer-title">Services</h5>
+                    <ul class="udi-footer-links">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div> -->
+                
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="udi-footer-title">Contact Information</h5>
+                    <ul class="udi-footer-links">
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                            <span>Mumbai, India</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-phone me-3 mt-1"></i>
+                            <span>+91 9820178720</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-envelope me-3 mt-1"></i>
+                            <span>info@udiindia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="udi-copyright text-center my-2">
+                <p class="mb-0">&copy; 2025 United Distributors India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simple validation
+            if (!formData.email.includes('@') || !formData.email.includes('.')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            // In a real application, you would send this data to your server
+            console.log('Form submitted:', formData);
+            
+            // Show success message and reset form
+            alert('Thank you for your message! We will be in touch soon.');
+            document.getElementById('contactForm').reset();
+            
+            return false;
+        }
+        
+        // Optional: Add animation to cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.contact-card');
+            
+            function checkScroll() {
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                cards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    
+                    if (cardTop < triggerBottom) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initialize card styles
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Check on load and scroll
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+    <script>
+        AOS.init({
+            once: false
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
