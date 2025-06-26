@@ -2264,13 +2264,20 @@ textarea.form-control {
   }
   
   .card-img-top-products {
-    max-height: 390px;
+    max-height: 340px;
     max-width: 100%;
     object-fit: contain;
     border-radius: 8px;
+    transition: transform 0.4s ease;
+    transform-origin: bottom;
   }
+  .card-img-top-products:hover{
+    transform: scale(1.05) translateY(-20px); /* Zoom + lift upward */
+    filter: drop-shadow(0 8px 16px rgba(255, 0, 0, 0.15)); /* Red shadow */
+}
+
   #productRangeCarousel .carousel-indicators [data-bs-target] {
-    background-color: #ff6f00; /* Inactive dot color */
+    background-color: #B71C1C20; /* Inactive dot color */
     width: 29px;
     height: 5px;
     border-radius: 0%;
@@ -2279,7 +2286,7 @@ textarea.form-control {
   }
   
   #productRangeCarousel .carousel-indicators .active {
-    background-color: #d84315; /* Active dot color */
+    background-color: #B71C1C; /* Active dot color */
     opacity: 1;
   }
 
@@ -2531,3 +2538,10 @@ textarea.form-control {
 .bg-tabasco{
     background: rgba(217, 2, 1,0.25) !important;
 }
+.product-dec {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;      /* Number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  

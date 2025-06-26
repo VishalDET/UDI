@@ -156,7 +156,7 @@
             border-radius: 20px;
             padding: 2.5rem;
             height: 100%;
-            box-shadow: var(--shadow-light);
+            /* box-shadow: var(--shadow-light); */
             transition: all 0.3s ease;
             border: 1px solid rgba(211, 47, 47, 0.1);
             position: relative;
@@ -178,7 +178,7 @@
 
         .usp-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-medium);
+            /* box-shadow: var(--shadow-medium); */
         }
 
         .usp-card:hover::before {
@@ -338,6 +338,23 @@
             margin-bottom: 0;
             margin-top: 2rem !important;
         }
+        .carousel-indicators {
+            bottom: -30px;
+        }
+        
+        .carousel-indicators [data-bs-target] {
+            width: 32px;
+            height: 5px;
+            border-radius: 3%;
+            background-color: #ee5a24;
+            border: none;
+            opacity: 0.1;
+            margin: 0 5px;
+        }
+        
+        .carousel-indicators .active {
+            opacity: 1;
+        }
     </style>
 
 </head>
@@ -415,120 +432,170 @@
             </div>
             <div class="row">
                 <!-- Grid Section -->
-                <p class="text-muted text-justify fs-5">
-                    TABASCO® is one of the most iconic hot sauce brands in the world, with over 150 years of heritage. Originating from Avery Island, Louisiana, it is recognized globally for its quality, consistency, and bold flavor. TABASCO is not just a hot sauce—it's a flavor enhancer that elevates cuisines across cultures.
-                </p>
-                <div class="col-md-12 mb-4 mb-md-0">
-                    <div class="row g-4">
-                        <!-- Heritage & Authenticity -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" >
-                                <div class="usp-icon">
-                                    <i class="fas fa-crown"></i>
+                
+                <div class="col-md-6 mb-4 mb-md-0 p-2">
+
+                    <div id="whyUsCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000">
+                        <!-- Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#whyUsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#whyUsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#whyUsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#whyUsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#whyUsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#whyUsCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        </div>
+                        
+                        <!-- Carousel Inner -->
+                        <div class="carousel-inner">
+                            <!-- Slide 1: Heritage & Authenticity -->
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-12">
+                                        <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                                            <div class="usp-icon">
+                                                <i class="fas fa-crown"></i>
+                                            </div>
+                                            <h3 class="usp-title fw-normal">Heritage & Authenticity</h3>
+                                            <ul class="">
+                                                <li class="usp-description text-muted">
+                                                    Established in 1868, with over 150 years of brand legacy.
+                                                </li>
+                                                <li class="usp-description text-muted">
+                                                    Made by the McIlhenny family for generations on Avery Island, USA.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 class="usp-title">Heritage & Authenticity</h3>
-                                <ul class="">
-                                    <li class="usp-description text-muted">
-                                        Established in 1868, with over 150 years of brand legacy.
-                                    </li>
-                                    <li class="usp-description text-muted">
-                                        Made by the McIlhenny family for generations on Avery Island, USA.
-                                    </li>
-                                </ul>
-                                
+                            </div>
+                            
+                            <!-- Slide 2: Three Simple Ingredients -->
+                            <div class="carousel-item">
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-12">
+                                        <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                                            <div class="usp-icon">
+                                                <i class="fas fa-leaf"></i>
+                                            </div>
+                                            <h3 class="usp-title fw-normal">Three Simple Ingredients</h3>
+                                            <ul class="">
+                                                <li class="usp-description text-muted">
+                                                    Red pepper, salt, and vinegar — mash aged in oak barrels for up to 3 years.
+                                                </li>
+                                                <li class="usp-description text-muted">
+                                                    No artificial preservatives or additives.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3: Global Versatility -->
+                            <div class="carousel-item">
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-12">
+                                        <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                                            <div class="usp-icon">
+                                                <i class="fas fa-globe"></i>
+                                            </div>
+                                            <h3 class="usp-title fw-normal">Global Versatility</h3>
+                                            <ul class="">
+                                                <li class="usp-description text-muted">
+                                                    Used in over 195 countries and packaged in over 36 languages.
+                                                </li>
+                                                <li class="usp-description text-muted">
+                                                    Pairs well with global cuisines—Indian, Asian, Continental, Latin, etc.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 4: Premium Quality -->
+                            <div class="carousel-item">
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-12">
+                                        <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                                            <div class="usp-icon">
+                                                <i class="fas fa-award"></i>
+                                            </div>
+                                            <h3 class="usp-title fw-normal">Premium Quality & Craftsmanship</h3>
+                                            <ul class="">
+                                                <li class="usp-description text-muted">
+                                                    Peppers are hand-picked and aged in oak barrels for deep, complex flavor.
+                                                </li>
+                                                <li class="usp-description text-muted">
+                                                    Consistent quality control from farm to bottle.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 5: Health-Conscious -->
+                            <div class="carousel-item">
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-12">
+                                        <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                                            <div class="usp-icon">
+                                                <i class="fas fa-heart"></i>
+                                            </div>
+                                            <h3 class="usp-title fw-normal">Health-Conscious Appeal</h3>
+                                            <ul class="usp-description">
+                                                <li class="usp-description text-muted">
+                                                    Low in calories, gluten-free, and vegan.
+                                                </li>
+                                                <li class="usp-description text-muted">
+                                                    Appeals to today's health-conscious consumers.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 6: Iconic Brand -->
+                            <div class="carousel-item">
+                                <div class="row justify-content-center p-2">
+                                    <div class="col-12">
+                                        <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                                            <div class="usp-icon">
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <h3 class="usp-title fw-normal">Iconic Brand Recognition</h3>
+                                            <ul class="usp-description">
+                                                <li class="usp-description text-muted">
+                                                    Instantly recognizable bottle with diamond label and red cap.
+                                                </li>
+                                                <li class="usp-description text-muted">
+                                                    Trusted by chefs, bartenders, and home cooks worldwide.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-        
-                        <!-- Three Simple Ingredients -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                                <div class="usp-icon">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <h3 class="usp-title">Three Simple Ingredients</h3>
-                                <ul class="">
-                                    <li class="usp-description text-muted">
-                                        Red pepper, salt, and vinegar — mash aged in oak barrels for up to 3 years.
-                                    </li>
-                                    <li class="usp-description text-muted">
-                                        No artificial preservatives or additives.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <!-- Global Versatility -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                                <div class="usp-icon">
-                                    <i class="fas fa-globe"></i>
-                                </div>
-                                <h3 class="usp-title">Global Versatility</h3>
-                                <ul class="">
-                                    <li class="usp-description text-muted">
-                                        Used in over 195 countries and packaged in over 36 languages.
-                                    </li>
-                                    <li class="usp-description text-muted">
-                                        Pairs well with global cuisines—Indian, Asian, Continental, Latin, etc.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <!-- Premium Quality -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                                <div class="usp-icon">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <h3 class="usp-title">Premium Quality & Craftsmanship</h3>
-                                <ul class="">
-                                    <li class="usp-description text-muted">
-                                        Peppers are hand-picked and aged in oak barrels for deep, complex flavor.
-                                    </li>
-                                    <li class="usp-description text-muted">
-                                        Consistent quality control from farm to bottle.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <!-- Health-Conscious -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                                <div class="usp-icon">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                                <h3 class="usp-title">Health-Conscious Appeal</h3>
-                                <ul class="usp-description">
-                                    <li class="usp-description text-muted">
-                                        Low in calories, gluten-free, and vegan.
-                                    </li>
-                                    <li class="usp-description text-muted">
-                                        Appeals to today’s health-conscious consumers.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <!-- Iconic Brand -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                                <div class="usp-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h3 class="usp-title">Iconic Brand Recognition</h3>
-                                <ul class="usp-description">
-                                    <li class="usp-description text-muted">
-                                        Instantly recognizable bottle with diamond label and red cap.
-                                    </li>
-                                    <li class="usp-description text-muted">
-                                        Trusted by chefs, bartenders, and home cooks worldwide.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        
+                        <!-- Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#whyUsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#whyUsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
+                </div>
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <p class="text-muted text-justify fs-5 mt-2" data-aos="fade-left" data-aos-duration="1000">
+                        TABASCO® is one of the most iconic hot sauce brands in the world, with over 150 years of heritage. Originating from Avery Island, Louisiana, it is recognized globally for its quality, consistency, and bold flavor. TABASCO is not just a hot sauce—it's a flavor enhancer that elevates cuisines across cultures.
+                    </p>
                 </div>
 
                
@@ -873,7 +940,7 @@
                 </div>
             
                 <div class="col-md-6 reason-list">
-                    <p class="fs-5 text-start p-lg-3 mt-2">
+                    <p class="fs-5 text-start p-lg-3 mt-2 fw-normal text-muted" data-aos="fade-left">
                         We’ve come a long way from our beginnings in 1868. While the Original Red Pepper Sauce stays true to the history of TABASCO® Brand, the TABASCO® Family of Flavors features 8 varieties of high-quality pepper sauces. From mild to wild, there’s something for everyone.
                     </p>
                 </div>
