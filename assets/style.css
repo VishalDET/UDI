@@ -2230,6 +2230,16 @@ textarea.form-control {
     display: flex;
     justify-content: center;
 }
+.icons-at-guylian{
+    background: #86442e10 ;
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
 .product-carousel-btns button{
     background: rgba(217, 9, 1,0.5) ;
 }
@@ -2271,10 +2281,10 @@ textarea.form-control {
     transition: transform 0.4s ease;
     transform-origin: bottom;
   }
-  .card-img-top-products:hover{
-    transform: scale(1.05) translateY(-20px); /* Zoom + lift upward */
-    filter: drop-shadow(0 8px 16px rgba(255, 0, 0, 0.15)); /* Red shadow */
-}
+  /* .card-img-top-products:hover{
+    transform: scale(1.05) translateY(-20px);
+    filter: drop-shadow(0 8px 16px rgba(255, 0, 0, 0.15));
+} */
 
   #productRangeCarousel .carousel-indicators [data-bs-target] {
     background-color: #B71C1C20; /* Inactive dot color */
@@ -2544,4 +2554,14 @@ textarea.form-control {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
+/* Guylian */
+.color-guylian{
+    color: #86442e;
+}
+.border-tabasco{
+    border: 1px solid rgba(217, 2, 1,0.25);
+}
+.bg-tabasco{
+    background: rgba(217, 2, 1,0.25) !important;
+}

@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDI - United Distributors India</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link src="assets/why.css" rel="stylesheet">
+        <script src="assets/script.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <link href="https://db.onlinewebfonts.com/c/54993c5e76edc6f01a170163891279ff?family=Vanitas-Extrabold" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+       
+        .product-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .why-loacker {
+            padding: 80px 0;
+            background-color: var(--loacker-cream);
+        }
+        
+        .why-loacker-item {
+            text-align: center;
+            padding: 30px 15px;
+        }
+        
+        .why-loacker-icon {
+            font-size: 3rem;
+            color: var(--loacker-red);
+            margin-bottom: 20px;
+        }
+        
+        .category-section {
+            padding: 80px 0;
+        }
+        
+        .category-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .category-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            color: white;
+        }
+        
+        .product-block {
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-block img {
+            max-width: 150px;
+            margin-right: 30px;
+        }
+        
+        .sku-badge {
+            background-color: var(--loacker-red);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+        
+        .footer {
+            padding: 50px 0;
+            background-color: var(--loacker-brown);
+            color: white;
+        }
+        
+        .social-icon {
+            font-size: 1.8rem;
+            color: white;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--loacker-gold);
+        }
+        
+        .btn-loacker {
+            background-color: var(--loacker-red);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-loacker:hover {
+            background-color: #b0252a;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(209, 42, 47, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding: 80px 0;
+            }
+            
+            .product-block {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .product-block img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        .usp-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            height: 100%;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(134, 88, 46, 0.15);
+            position: relative;
+            overflow: hidden;
+            text-align: start;
+        }
+
+        .usp-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-bg);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .usp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .usp-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .usp-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 4px 15px #86442e;
+        }
+
+        .usp-title {
+            color: var(--tabasco-dark);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .usp-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.15rem;
+        }
+
+        .usp-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .usp-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            color: #555;
+        }
+
+        .usp-list li::before {
+            content: '✓';
+            color: var(--tabasco-red);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .experience-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .experience-icon {
+            font-size: 3rem;
+            color: var(--tabasco-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-section {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .usp-card {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        :root {
+            --tabasco-red: #D32F2F;
+            /* --tabasco-dark: #B71C1C; */
+            --tabasco-dark: #86442e;
+            --tabasco-gold: #FFB300;
+            /* --gradient-bg: linear-gradient(135deg, #d9e0ce 0%, #5e6546 100%); */
+            --gradient-bg:linear-gradient(135deg, #c28560 0%, #86442e 100%);
+            --shadow-light: 0 4px 15px rgba(134, 88, 46, 0.1);
+            --shadow-medium: 0 8px 25px rgba(134, 88, 46, 0.2);
+        }
+        .carousel-control-next-icon,
+        .carousel-control-prev-icon {
+            background-size: 1.25rem 1.25rem; 
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2386442e'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2386442e'%3e%3cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.646 8l6 6a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+
+        .carousel-indicators{
+            margin-bottom: 0;
+            margin-top: 2rem !important;
+        }
+        #productRangeCarousel .carousel-indicators [data-bs-target]{
+            background-color: #86442e75;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="udi-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <a href="/" class="udi-logo-container">
+                    <!-- <strong class="headings display-5 text-udi">UDI</strong> -->
+                    <img src="assets/images/Logos/udi/udi.png" alt="UDI Logo" class="udi-logo w-100">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="d-none d-lg-block">
+                    <ul class="list-unstyled d-flex mb-0 gap-3">
+                        <li><a href="Index.html" class="udi-nav-link active ls-2 text-uppercase">Home</a></li>
+                        <li><a href="About-us.html" class="udi-nav-link ls-2 text-uppercase">About Us</a></li>
+                        <li><a href="Portfolio.html" class="udi-nav-link ls-2 text-uppercase">Portfolio</a></li>
+                        <li><a href="Excellency.html" class="udi-nav-link ls-2 text-uppercase">Excellency</a></li>
+                        <li><a href="Contact-us.html" class="udi-nav-link ls-2 text-uppercase">Contact Us</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Hamburger Button -->
+                <button class="udi-hamburger d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="brand-hero">
+        <img src="assets/images/products/Guylian/Guylian Microsite Banner.jpeg" alt="" srcset="" class="rounded" />
+    </section>
+
+    <main class="udi-content main-content">
+
+        <!-- Brand History -->
+        <section class="bg-section">
+        <div class="container py-5">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Brand History</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row align-items-start">
+                
+                <div class="col-lg-6 text-start">
+                    <!-- <div class="section-title text-start mb-0">
+                        <h2  data-aos="fade-down" data-aos-duration="1000">Brand History</h2>
+                        <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p>
+                    </div> -->
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">Guylian’s story is a love story. When Guy marries his true love, Liliane, in 1958, the couple merge their passion for the sweetest pleasures, love and chocolate by combining their first names into Chocolaterie Guy-Lian.</p>
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">The origin of the chocolate Seashells is rooted in their holiday on the Belgian coast, they come up with the idea of making a souvenir in chocolate. The story of Guylian’s chocolate Seafood starts here.</p>
+                    
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/images/Image_not_available.png" alt="Loacker History" class="img-fluid rounded shadow-none bg-white"  data-aos="fade-left" data-aos-duration="1000">
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Why Loacker Section -->
+        <section class="why-loacker bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Why Guylian</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row">
+                <!-- Grid Section -->
+                
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="row g-4">
+                        <!-- 100% Fairtrade Cocoa -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="usp-icon">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                </div>
+                                <h3 class="usp-title">100% Fairtrade Cocoa</h3>
+                                <!-- <p class="usp-description text-muted">
+                                    Ethically sourced cocoa that supports sustainable farming and fair wages.
+                                </p> -->
+                            </div>
+                        </div>
+                    
+                        <!-- 100% Natural Ingredients -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <div class="usp-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <h3 class="usp-title">100% Natural Ingredients</h3>
+                                <!-- <p class="usp-description text-muted">
+                                    Made with only natural, wholesome ingredients – nothing artificial.
+                                </p> -->
+                            </div>
+                        </div>
+                    
+                        <!-- 100% Palm Oil Free -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                <div class="usp-icon">
+                                    <i class="fas fa-tree"></i>
+                                </div>
+                                <h3 class="usp-title">100% Palm Oil Free</h3>
+                                <!-- <p class="usp-description text-muted">
+                                    No palm oil, promoting environmental sustainability and healthier products.
+                                </p> -->
+                            </div>
+                        </div>
+                    
+                        <!-- No Preservatives and Colourants -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                                <div class="usp-icon">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <h3 class="usp-title">No Preservatives or Colourants</h3>
+                                <!-- <p class="usp-description text-muted">
+                                    Completely free from artificial preservatives and synthetic colors.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <p class="text-muted text-justify fs-5 mt-1">
+                        Discover the exquisite taste of these world-famous chocolates, each Seashell a small masterpiece with a marbled shell made of dark, white and milk chocolate and a creamy hazelnut praliné filling.</p>
+                        <p class="text-muted text-justify fs-5 mt-3"> Crafted with Fairtrade-certified, premium ingredients for an irresistibly appetizing experience. We stand for the sustainable origin and quality of each ingredient, guaranteeing delicious chocolates for you and a better world for us all.
+                    </p>
+                </div>
+               
+                
+            </div>
+            
+        </div>
+        </section>
+
+        <section class="why-loacker bg-section">
+            <div class="container">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Our Products</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row">
+                <!-- <div class="">
+                    <p class="fs-5">
+                        We’ve come a long way from our beginnings in 1868. While the Original Red Pepper Sauce stays true to the history of TABASCO® Brand, the TABASCO® Family of Flavors features 8 varieties of high-quality pepper sauces. From mild to wild, there’s something for everyone.
+                    </p>
+                </div> -->
+                <div class="col-md-6 px-lg-5">
+                    <div class="products-banner bg-white rounded-3">
+                        <img src="assets/images/Image_not_available.png" alt="" srcset="" class="img-fluid">
+                    </div>
+                      
+                      
+                </div>
+            
+
+                <div class="col-md-6 reason-list px-5">
+
+                    <!-- Chocolate Tablets -->
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-guylian">
+                            <i class="fas fa-th-large fs-3 color-guylian"></i> <!-- Tablet-style grid icon -->
+                        </div>                  
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Chocolate Tablets</h3>
+                        </div>
+                    </div>
+                
+                    <!-- Seashells -->
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-guylian">
+                            <i class="fas fa-water fs-3 color-guylian"></i> <!-- Water icon representing seashells -->
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Seashells</h3>
+                        </div>
+                    </div>
+                
+                    <!-- Seahorses -->
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-guylian">
+                            <i class="fas fa-fish fs-3 color-guylian"></i> <!-- Sea creature icon -->
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Seahorses</h3>
+                        </div>
+                    </div>
+                
+                    <!-- Temptations -->
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-guylian">
+                            <i class="fas fa-heart fs-3 color-guylian"></i> <!-- Heart icon for indulgence -->
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Temptations</h3>
+                        </div>
+                    </div>
+                
+                </div>
+                
+            </div>
+            </div>
+        </section>
+
+        <section class="why-loacker bg-light mb-0">
+            <div class="container">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Product Range</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row">
+                <!-- <div class="">
+                    <p class="fs-5">
+                        We’ve come a long way from our beginnings in 1868. While the Original Red Pepper Sauce stays true to the history of TABASCO® Brand, the TABASCO® Family of Flavors features 8 varieties of high-quality pepper sauces. From mild to wild, there’s something for everyone.
+                    </p>
+                </div> -->
+                <div class="col-md-6 px-lg-5">
+                    <div id="productRangeCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicators -->
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="14" aria-label="Slide 15"></button>
+                          <!-- <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="15" aria-label="Slide 16"></button> -->
+
+                        </div>
+                      
+                        <!-- Carousel Items -->
+                        <div class="carousel-inner py-4 px-2 rounded shadow-none">
+                          <!-- Template Slide -->
+                          <!-- Repeat this block per item, adjust content accordingly -->
+                      
+                          <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Digital Front_Guylian_Dark_Praline_112g.jpg" class="card-img-top-products" alt="Chocolate Seashells Dark">
+                                  <div class="card-body pb-0">
+                                    <div class="row">
+                                        <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Seashells Dark</h3>
+                                        <div class="small text-start color-guylian">112g</div>
+                                    </div>
+                                    
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">Dark chocolate seashells made with rich cocoa for true chocolate lovers.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 2 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Seashells 65g.jpg" class="card-img-top-products" alt="Chocolate Seashells Original 65g">
+                                  <div class="card-body pb-0 text-start">
+                                    <div class="row">
+                                        <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Seashells Original</h3>
+                                        <div class="small text-start color-guylian">65g</div>
+                                    </div>
+                                    
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">Classic milk chocolate seashells with a creamy texture and iconic shape.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 3 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Seashells 125g.jpg" class="card-img-top-products" alt="Chocolate Seashells Original 125g">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Seashells Original</h3>
+                                    <div class="small text-start color-guylian">125g</div>
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">Enjoy more of your favorite milk chocolate seashells in this larger pack.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 4 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Guylian_TheOriginal_Seashells_Luxe_Box_250g_001.jpg" class="card-img-top-products" alt="Chocolate Seashells Original 250g">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Seashells Original</h3>
+                                    <div class="small text-start color-guylian">250g</div>
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">A family-size pack of your favorite chocolate seashells — perfect for sharing.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 5 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Tablet (4x25g) Creamy Milk.jpg" class="card-img-top-products" alt="Chocolate Tablet Creamy Milk">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Tablet Creamy Milk</h3>
+                                    <div class="small text-start color-guylian">4x25g</div>
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">Smooth and creamy milk chocolate tablets with lecithin for perfect melt-in-mouth texture.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 6 -->
+                          <!-- <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Tablet (4x25g) Dark 84% With Stevia Sweetener (1).jpg" class="card-img-top-products" alt="Chocolate Tablet Dark Stevia">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Tablet Dark With Stevia</h3>
+                                    <div class="small text-start color-guylian">4x25g</div>
+                                  </div>
+                                   <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">Dark chocolate sweetened naturally with stevia – sugar-free indulgence.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                      
+                          <!-- Slide 7 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Tablet (4x25g) Milk Caramelised Almond.jpg" class="card-img-top-products" alt="Chocolate Tablet Milk Caramelised Almond">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Tablet Milk Caramelised Almond</h3>
+                                    <div class="small text-start color-guylian">4x25g</div>
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">Milk chocolate paired with caramelised almonds for a delightful crunch.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 8 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Tablet (4x25g) Milk Salted Caramel .jpg" class="card-img-top-products" alt="Chocolate Tablet Milk Salted Caramel">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Tablet Milk Salted Caramel</h3>
+                                    <div class="small text-start color-guylian">4x25g</div>
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">The sweetness of caramel with a pinch of sea salt in creamy milk chocolate.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 9 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Tablet (4x25g) Milk With Stevia Sweetener.jpg" class="card-img-top-products" alt="Chocolate Tablet Milk Stevia">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Tablet Milk With Stevia</h3>
+                                    <div class="small text-start color-guylian">4x25g</div>
+                                  </div>
+                                  <!-- <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">A guilt-free treat – milk chocolate sweetened with stevia instead of sugar.</p>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 10 -->
+                          <!-- <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front Chocolate Tablet (4x25g) Dark 84% With Stevia Sweetener (1).jpg" class="card-img-top-products" alt="Chocolate Tablet Premium Dark">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Chocolate Tablet Premium Dark</h3>
+                                    <div class="small text-start color-guylian">4x25g</div>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                          
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Guylian_Belgian_Asssortment_Luxe_Box_180g_001.jpg" class="card-img-top-products" alt="Guylian Belgian Assortment Luxe Box 180g 2024">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Guylian Belgian Assortment Luxe Box</h3>
+                                    <div class="small text-start color-guylian">180g • 2024</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Guylian_DarkPraline_Seashells_Luxe_Box_225g_001.jpg" class="card-img-top-products" alt="Guylian Dark Praliné Seashells Luxe Box 225g 2024">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Dark Praliné Seashells Luxe Box</h3>
+                                    <div class="small text-start color-guylian">225g • 2024</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Guylian_Temptations_Curved_Mix_200g_001.jpg" class="card-img-top-products" alt="Guylian Temptations 124g Mix Impulse Pack - EUR 2024">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Temptations Mix Impulse Pack</h3>
+                                    <div class="small text-start color-guylian">124g • EUR 2024</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Guylian_TheOriginal_Seashells_Luxe_Box_250g_001.jpg" class="card-img-top-products" alt="Guylian The Original Seashells Luxe Box 250g 2024">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">The Original Seashells Luxe Box</h3>
+                                    <div class="small text-start color-guylian">250g • 2024</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front_Guylian_Seasonals_Valentine_Heart_Box_105g_Without_Text.jpg" class="card-img-top-products" alt="Guylian Valentine Heart Box 105g">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Valentine Heart Box</h3>
+                                    <div class="small text-start color-guylian">105g • Seasonals</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Front_Guylian_Seasonals_Valentine_Heart_Box_105g_Without_Text.jpg" class="card-img-top-products" alt="Seasonals Valentine Heart Box 42g">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Valentine Heart Box</h3>
+                                    <div class="small text-start color-guylian">42g • Seasonals</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Guylian/Guylian_Temptations_Curved_Mix_200g_001.jpg" class="card-img-top-products" alt="Temptations Curved Pack Mix EUR - 2024">
+                                  <div class="card-body pb-0">
+                                    <h3 class="fs-5 fw-normal mb-1 text-start">Temptations Curved Pack Mix</h3>
+                                    <div class="small text-start color-guylian">EUR • 2024</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      
+                        <!-- Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productRangeCarousel" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productRangeCarousel" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                      
+                      
+                      
+                </div>
+            
+                <div class="col-md-6 reason-list">
+                    <p class="fs-5 text-start p-lg-3 mt-2">
+                        content needed.
+                    </p>
+                </div>
+
+                <!-- <div class="col-md-6 reason-list">
+                    <div class="text-start mb-3">
+                        <h6 class="text-dark fs-5 ls-15 fw-bold">
+                            SKUs
+                        </h6>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-cookie-bite fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Classic Wafers</h3>
+                            <p class="mb-0 text-muted">Vanilla, Hazelnut, and Chocolate flavors in 45g, 90g, 175g packs.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-th-large fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Quadro Napolitaner</h3>
+                            <p class="mb-0 text-muted">Bite-sized wafer cubes, ideal for sharing. Comes in 125g, 250g pouches.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-grip-lines-vertical fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Wafer Fingers</h3>
+                            <p class="mb-0 text-muted">Individually wrapped snack bars in multipacks—perfect for on-the-go!</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-candy-cane fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Chocolate Coated Wafers</h3>
+                            <p class="mb-0 text-muted">Premium coated wafers with dark, milk, or white chocolate options.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-box-open fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Minis Multipacks</h3>
+                            <p class="mb-0 text-muted">Assorted mini wafers in packs of 10, 15, and 20—great for gifting or school tiffins.</p>
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4>Pure Ingredients</h4>
+                        <p>We use only natural ingredients with no artificial additives, colorings, or preservatives.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h4>Craftsmanship</h4>
+                        <p>Almost 100 years of experience in creating the perfect wafer recipes and techniques.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h4>Sustainability</h4>
+                        <p>Committed to sustainable sourcing and environmentally friendly production methods.</p>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+        </section>
+
+        <section class="bg-section">
+            <div class="container">
+              <div class="bg-white border-warning shadow-sm p-4 rounded text-start" data-aos="fade-up">
+                <h5 class="fw-normal color-guylian mb-2 ls-15 lead"><i class="fas fa-info-circle me-2"></i>Note / Disclaimer</h5>
+                <p class="mb-0 text-muted">
+                    To learn more about Guylian brand please visit official guylian website !</p>
+              </div>
+          
+              <!-- <div class="text-center mt-4">
+                <p class="mb-2 fw-semibold">Follow brand for more updates</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="text-primary color-loacker fs-4 " aria-label="Facebook" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="text-dark  color-loacker fs-4" aria-label="Twitter" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><i class="fab fa-x-twitter"></i></a>
+                  <a href="#" class="text-primary color-loacker fs-4" aria-label="LinkedIn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="text-danger color-loacker fs-4" aria-label="Instagram" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div> -->
+            </div>
+        </section>
+
+
+        
+    </main>
+    <!-- Footer -->
+    <footer class="udi-footer">
+        <div class="container">
+            <div class="row justify-content-between mb-3">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <img src="assets/images/Logos/udi/udi-white1.png" alt="Company Logo" class="mb-4 w-50">
+                     <!-- <div class="display-5 fw-bold">
+                        UDI
+                     </div> -->
+                    <!-- <p class="mb-4">United Distributors India, F5, PINNACLE BUSINESS PARK, 9A, Mahakali Caves Rd, Shanti Nagar, Andheri East, Mumbai, Maharashtra 400093.</p> -->
+                    <div class="udi-social-icons">
+                        <a href="https://www.facebook.com/uniteddistributorsindia/" class="udi-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <!-- <a href="#" class="udi-social-icon"><i class="fab fa-twitter"></i></a> -->
+                        <a href="https://www.instagram.com/udi.india/" class="udi-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://in.linkedin.com/company/uniteddistributorsindia" class="udi-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="udi-footer-title">Quick Links</h5>
+                    <ul class="udi-footer-links">
+                        <li><a href="About-us.html" class="udi-ftr-link text-white">About Us</a></li>
+                        <li><a href="Excellency.html" class="udi-ftr-link text-white">Excellence In Distribution</a></li>
+                        <li><a href="Portfolio.html" class="udi-ftr-link text-white">Portfolio</a></li>
+                        <li><a href="Contact-us.html" class="udi-ftr-link text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <!-- <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="udi-footer-title">Services</h5>
+                    <ul class="udi-footer-links">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div> -->
+                
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="udi-footer-title">Contact Information</h5>
+                    <ul class="udi-footer-links">
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                            <span>Mumbai, India</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-phone me-3 mt-1"></i>
+                            <span>+91 9820178720</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-envelope me-3 mt-1"></i>
+                            <span>info@udiindia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="udi-copyright text-center my-2">
+                <p class="mb-0">&copy; 2025 United Distributors India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Ensure smooth carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('#productRangeCarousel');
+            const carouselInstance = new bootstrap.Carousel(carousel, {
+                interval: 4000,
+                wrap: true,
+                touch: true
+            });
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    carouselInstance.prev();
+                } else if (e.key === 'ArrowRight') {
+                    carouselInstance.next();
+                }
+            });
+            
+            // Pause on hover
+            carousel.addEventListener('mouseenter', function() {
+                carouselInstance.pause();
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                carouselInstance.cycle();
+            });
+        });
+    </script>
+    <script>
+        const observer1Options = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+    
+        const observer1 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observer1Options);
+    
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer1.observe(el);
+        });
+    
+        document.querySelectorAll('.fade-in').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.1}s`;
+        });
+    
+        function animateCounter1(element, target) {
+            const duration = 2000;
+            const startTime = performance.now();
+    
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * target);
+                
+                element.textContent = current + (target === 195 ? '' : '+');
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+    
+            requestAnimationFrame(updateCounter);
+        }
+    
+        const statsObserver1 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    const targets = [150, 195, 36, 3];
+    
+                    statNumbers.forEach((el, index) => {
+                        setTimeout(() => {
+                            animateCounter1(el, targets[index]);
+                        }, index * 200);
+                    });
+    
+                    statsObserver1.unobserve(entry.target);
+                }
+            });
+        });
+    
+        statsObserver1.observe(document.querySelector('.stats-section'));
+    </script>
+    
+    <script>
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    
+                    // Animate progress circles
+                    const progressCircle = entry.target.querySelector('.progress-circle');
+                    if (progressCircle) {
+                        setTimeout(() => {
+                            const arc = progressCircle.querySelector('.progress-arc');
+                            arc.style.strokeDashoffset = '70';
+                        }, 300);
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animate-on-scroll elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize progress circles with full offset
+        document.querySelectorAll('.progress-arc').forEach(arc => {
+            arc.style.strokeDashoffset = '283';
+        });
+    </script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simple validation
+            if (!formData.email.includes('@') || !formData.email.includes('.')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            // In a real application, you would send this data to your server
+            console.log('Form submitted:', formData);
+            
+            // Show success message and reset form
+            alert('Thank you for your message! We will be in touch soon.');
+            document.getElementById('contactForm').reset();
+            
+            return false;
+        }
+        
+        // Optional: Add animation to cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.contact-card');
+            
+            function checkScroll() {
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                cards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    
+                    if (cardTop < triggerBottom) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initialize card styles
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Check on load and scroll
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+    <script>
+        AOS.init({
+            once: false
+        });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
