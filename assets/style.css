@@ -2565,3 +2565,15 @@ textarea.form-control {
 .bg-tabasco{
     background: rgba(217, 2, 1,0.25) !important;
 }
+
+
+/* Davidoff*/
+.color-davidoff{
+    color: #000427;
+}
+.border-davidoff{
+    border: 1px solid #00042725;
+}
+.bg-davidoff{
+    background: #000427 !important;
+}

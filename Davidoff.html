@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDI - Davidoff</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link src="assets/why.css" rel="stylesheet">
+        <script src="assets/script.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <link href="https://db.onlinewebfonts.com/c/54993c5e76edc6f01a170163891279ff?family=Vanitas-Extrabold" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+       
+        .product-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .why-loacker {
+            padding: 80px 0;
+            background-color: var(--loacker-cream);
+        }
+        
+        .why-loacker-item {
+            text-align: center;
+            padding: 30px 15px;
+        }
+        
+        .why-loacker-icon {
+            font-size: 3rem;
+            color: var(--loacker-red);
+            margin-bottom: 20px;
+        }
+        
+        .category-section {
+            padding: 80px 0;
+        }
+        
+        .category-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .category-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            color: white;
+        }
+        
+        .product-block {
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-block img {
+            max-width: 150px;
+            margin-right: 30px;
+        }
+        
+        .sku-badge {
+            background-color: var(--loacker-red);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+        
+        .footer {
+            padding: 50px 0;
+            background-color: var(--loacker-brown);
+            color: white;
+        }
+        
+        .social-icon {
+            font-size: 1.8rem;
+            color: white;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--loacker-gold);
+        }
+        
+        .btn-loacker {
+            background-color: var(--loacker-red);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-loacker:hover {
+            background-color: #b0252a;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(209, 42, 47, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding: 80px 0;
+            }
+            
+            .product-block {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .product-block img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        .usp-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            height: 100%;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,34,9, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: start;
+        }
+
+        .usp-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-bg);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .usp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .usp-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .usp-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,4,39, 0.3);
+        }
+
+        .usp-title {
+            color: var(--tabasco-dark);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .usp-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.15rem;
+        }
+
+        .usp-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .usp-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            color: #555;
+        }
+
+        .usp-list li::before {
+            content: '✓';
+            color: var(--tabasco-red);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .product-range-card {
+  background: white;
+  border-radius: 16px;
+  padding: 0;
+  height: 100%;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 34, 9, 0.1);
+  position: relative;
+  overflow: hidden;
+  text-align: start;
+}
+
+.product-range-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-bg);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.product-range-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.product-range-card:hover::before {
+  transform: scaleX(1);
+}
+
+.product-range-img img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 190px;
+}
+
+.product-range-title {
+  color: var(--tabasco-dark);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 1.5rem 1rem;
+}
+
+.product-range-description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin: 0 1.5rem 2rem;
+}
+
+        .experience-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .experience-icon {
+            font-size: 3rem;
+            color: var(--tabasco-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-section {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .usp-card {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        :root {
+            --davidoff-light: #00042725;
+            --davidoff-dark: #000427;
+            --gradient-bg: linear-gradient(135deg, #000427 0%, #000427 100%);
+            --shadow-light: 0 4px 15px rgba(0,34,9, 0.15);
+            --shadow-medium: 0 8px 25px rgba(0,34,9, 0.15);
+        }
+        .carousel-control-next-icon,
+        .carousel-control-prev-icon {
+            background-size: 1.25rem 1.25rem; 
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000427'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000427'%3e%3cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.646 8l6 6a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+
+
+        .carousel-indicators{
+            margin-bottom: 0;
+            margin-top: 2rem !important;
+        }
+        #productRangeCarousel .carousel-indicators [data-bs-target]{
+            background-color: #000427;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="udi-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <a href="/" class="udi-logo-container">
+                    <!-- <strong class="headings display-5 text-udi">UDI</strong> -->
+                    <img src="assets/images/Logos/udi/udi.png" alt="UDI Logo" class="udi-logo w-100">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="d-none d-lg-block">
+                    <ul class="list-unstyled d-flex mb-0 gap-3">
+                        <li><a href="Index.html" class="udi-nav-link active ls-2 text-uppercase">Home</a></li>
+                        <li><a href="About-us.html" class="udi-nav-link ls-2 text-uppercase">About Us</a></li>
+                        <li><a href="Portfolio.html" class="udi-nav-link ls-2 text-uppercase">Portfolio</a></li>
+                        <li><a href="Excellency.html" class="udi-nav-link ls-2 text-uppercase">Excellency</a></li>
+                        <li><a href="Contact-us.html" class="udi-nav-link ls-2 text-uppercase">Contact Us</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Hamburger Button -->
+                <button class="udi-hamburger d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="brand-hero">
+        <img src="assets/images/banners/Davidoff/Davidoff 1920 x 490px final.jpg" alt="" srcset="" class="rounded" />
+    </section>
+
+    <main class="udi-content main-content">
+
+        <!-- Brand History -->
+        <section class="bg-section">
+            <div class="container py-5">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Brand History</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row align-items-start">
+                
+                <div class="col-lg-6 text-start">
+                    <!-- <div class="section-title text-start mb-0">
+                        <h2  data-aos="fade-down" data-aos-duration="1000">Brand History</h2>
+                        <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p>
+                    </div> -->
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">Founded in 1980, the Zino Davidoff Group is a Swiss-based family
+                        business. Our founder, Zino Davidoff, is at the heart of the brand and
+                        inspires everything we do - our product collections reflect his natural
+                        elegance and appreciation for fine quality, style, authenticity and good
+                        living.</p>
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">Zino valued simplicity and wanted to share the happiness that
+                        comes from enjoying beautiful things - and it was through his products
+                        that he set out to share this spirit with the world.</p>
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">Today, the name
+                        Davidoff is synonymous with pleasure, timeless style, good living,
+                        modesty and joie de vivre. Davidoff Cafe guarantees creating unique
+                        moments of taste and pleasure with every cup of coffee.</p>
+                    
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/images/products/Davidoff/Davidoff Lifestyle Images/History.jpg" alt="Davidoff History" class="img-fluid rounded shadow"  data-aos="fade-left" data-aos-duration="1000">
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="bg-light">
+            <div class="container py-5">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Brand Story</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row align-items-start">
+                <div class="col-lg-6">
+                    <img src="assets/images/products/Davidoff/Davidoff Lifestyle Images/2025_DVC_ES_57_Range_Photoshooting_2025_4.jpg" alt="Davidoff History" class="img-fluid rounded shadow"  data-aos="fade-right" data-aos-duration="1000">
+                </div>
+                <div class="col-lg-6 text-start">
+                    <!-- <div class="section-title text-start mb-0">
+                        <h2  data-aos="fade-down" data-aos-duration="1000">Brand History</h2>
+                        <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p>
+                    </div> -->
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">The coffee bean is a fickle little thing. That’s why the challenge of
+                        blending the world’s finest coffee is harder than it
+                        sounds. It grows on three continents and in nearly 70 countries, so you
+                        have to go a long way to source the best.</p>
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">Grown at too low an altitude, the coffee may not be complex enough;
+                        too high and it can be too acidic. Different soils impart very different
+                        tastes. Bean size makes a big difference. Too much rain – not much
+                        flavor; too little – perhaps too much flavor.</p>
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">As you can see, then, Mother Nature makes sure we have to be
+                        constantly attentive in order to bring you the perfect coffee taste every
+                        time</p>
+                    <p class="text-justify fs-5" data-aos="fade-up" data-aos-duration="1000">That’s where the brilliance of our blenders comes to the fore. They
+                            select exceptional coffee beans from the world’s premier coffee
+                            growing regions, individually roasted using the finest craftsmanship and
+                            masterfully blended recipes, ensure unique moments of discerning
+                            taste. Just as Zino Davidoff loved them.</p>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </section>
+
+
+
+        <!-- Why Loacker Section -->
+        <section class="why-loacker bg-section">
+        <div class="container">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Why Davidoff</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row">
+                <!-- Grid Section -->
+                <p class="text-muted text-justify fs-5">
+                    DAVIDOFF coffee experts travel the world for sourcing only the
+                    finest coffee varieties from the best origins and growing regions
+                    with their individual aromas. By roasting these extraordinary coffees
+                    to perfection and skillfully composing them to the best-matching
+                    blends, our masters bring alive the full characteristic flavors of
+                    every origin.
+                </p>
+                <div class="col-md-12 mb-4 mb-md-0">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" >
+                                <div class="usp-icon">
+                                    <i class="fas fa-mug-hot"></i>
+                                </div>
+                                <h3 class="usp-title">Outstanding coffee beans from selected growing regions</h3>
+                                <p class="usp-description text-muted">
+                                    The DAVIDOFF coffee experts have thorough experience in selecting
+                                    and composing coffee. On their travels around the world and along
+                                    the finest coffee origins, they discover coffee beans of exceptional
+                                    taste.
+                                </p>
+                                
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <div class="usp-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <h3 class="usp-title">Sophisticated blending standards to create marvelous tastes</h3>
+                                <p class="usp-description">
+                                    Our high-quality standards and aspiration for perfection guarantee
+                                    that your favorite coffee always tastes as you learned to love it.
+                                </p>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                <div class="usp-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="usp-title">Distinctive taste profiles for your perfect coffee indulgence</h3>
+                                <p class="usp-description">
+                                    DAVIDOFF offers superior quality among a wide range of distinctive
+                                    varieties. Whether you prefer your coffee mild or intense, our wide
+                                    selection of varieties will certainly suit your taste.
+                                </p>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="usp-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                                <div class="usp-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h3 class="usp-title">Decades of dedicated coffee production expertise</h3>
+                                <p class="usp-description">
+                                    The Tchibo GmbH, Europe’s 4th biggest coffee roaster, acquired the
+                                    DAVIDOFF CAFÉ license in 2002 and constantly improves its
+                                    international orientation
+                                </p>
+                            </div>
+                        </div>
+        
+                        
+                    </div>
+                </div>
+
+               
+                
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4>Pure Ingredients</h4>
+                        <p>We use only natural ingredients with no artificial additives, colorings, or preservatives.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h4>Craftsmanship</h4>
+                        <p>Almost 100 years of experience in creating the perfect wafer recipes and techniques.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h4>Sustainability</h4>
+                        <p>Committed to sustainable sourcing and environmentally friendly production methods.</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        </section>
+
+
+        <section class="why-loacker bg-light">
+            <div class="container">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Our Product Range</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row">
+                <!-- <div class="">
+                    <p class="fs-5">
+                        We’ve come a long way from our beginnings in 1868. While the Original Red Pepper Sauce stays true to the history of TABASCO® Brand, the TABASCO® Family of Flavors features 8 varieties of high-quality pepper sauces. From mild to wild, there’s something for everyone.
+                    </p>
+                </div> -->
+                <div class="col-md-12 px-lg-5">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-range-card" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="product-range-img mb-4">
+                                  <img src="assets/images/products/Davidoff/Instant-Coffee.PNG" class="img-fluid w-100">
+                                </div>
+                                <h3 class="product-range-title">Instant Coffee</h3>
+                                <p class="product-range-description">
+                                  DAVIDOFF Instant Coffees are made of 100% pure Arabica beans. The delightful recipes pay tribute to our heritage of dedicated coffee craftmanship and perfected blends, while incorporating all the benefits of modern technology.  
+                                  <!-- The Instant Coffee range includes a versatile selection of freeze-dried and spray-dried roasted coffee extract for soluble and convenient coffee preparation, meeting every coffee lover’s preference. -->
+                                </p>
+                              </div>
+                              
+                        </div>
+        
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-range-card" data-aos="fade-up" data-aos-duration="1000">
+                                    <div class="product-range-img mb-4">
+                                      <img src="assets/images/products/Davidoff/Coffee-Capsules.PNG" class="img-fluid w-100">
+                                    </div>
+                                    <h3 class="product-range-title">Coffee Capsules</h3>
+                                    <p class="product-range-description">
+                                        <!-- No effort was spared in translating the exquisite DAVIDOFF CAFÉ blends into
+                                        new delicious capsule varieties. -->
+                                        Made predominantly from aluminium, the capsules perfectly captures the
+                                        exceptional aromas of our long-term drum roasted coffee with an air- and
+                                        light-proof seal, ensuring that each and every capsule of coffee retains its
+                                        fullest taste until freshly prepared using a NESPRESSO®* machine.
+                                     </p>
+                                  </div>
+                                  
+                            </div>
+        
+                        <!-- Global Versatility -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-range-card" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="product-range-img mb-4">
+                                  <!-- <img src="assets/images/products/Davidoff/Roasted-Ground.PNG" class="img-fluid w-50"> -->
+                                  <img src="assets/images/products/Davidoff/Whole-Beans.PNG" class="img-fluid w-100">
+
+                                </div>
+                                <h3 class="product-range-title">Roasted Coffee</h3>
+                                <p class="product-range-description">
+                                    <!-- No effort was spared in translating the exquisite DAVIDOFF CAFÉ blends into
+                                    new delicious capsule varieties. -->
+                                    Made predominantly from aluminium, the capsules perfectly captures the
+                                    exceptional aromas of our long-term drum roasted coffee with an air- and
+                                    light-proof seal, ensuring that each and every capsule of coffee retains its
+                                    fullest taste until freshly prepared using a NESPRESSO®* machine.
+                                 </p>
+                              </div>
+                              
+                        </div>
+        
+                        
+                    </div>
+                      
+                      
+                </div>
+            
+                <!-- <div class="col-md-6 reason-list">
+                    <p class="fs-5 text-start p-lg-3 mt-2">
+                        We’ve come a long way from our beginnings in 1868. While the Original Red Pepper Sauce stays true to the history of TABASCO® Brand, the TABASCO® Family of Flavors features 8 varieties of high-quality pepper sauces. From mild to wild, there’s something for everyone.
+                    </p>
+                </div> -->
+
+                <!-- <div class="col-md-6 reason-list">
+                    <div class="text-start mb-3">
+                        <h6 class="text-dark fs-5 ls-15 fw-bold">
+                            SKUs
+                        </h6>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-cookie-bite fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Classic Wafers</h3>
+                            <p class="mb-0 text-muted">Vanilla, Hazelnut, and Chocolate flavors in 45g, 90g, 175g packs.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-th-large fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Quadro Napolitaner</h3>
+                            <p class="mb-0 text-muted">Bite-sized wafer cubes, ideal for sharing. Comes in 125g, 250g pouches.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-grip-lines-vertical fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Wafer Fingers</h3>
+                            <p class="mb-0 text-muted">Individually wrapped snack bars in multipacks—perfect for on-the-go!</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-candy-cane fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Chocolate Coated Wafers</h3>
+                            <p class="mb-0 text-muted">Premium coated wafers with dark, milk, or white chocolate options.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-box-open fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Minis Multipacks</h3>
+                            <p class="mb-0 text-muted">Assorted mini wafers in packs of 10, 15, and 20—great for gifting or school tiffins.</p>
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4>Pure Ingredients</h4>
+                        <p>We use only natural ingredients with no artificial additives, colorings, or preservatives.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h4>Craftsmanship</h4>
+                        <p>Almost 100 years of experience in creating the perfect wafer recipes and techniques.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h4>Sustainability</h4>
+                        <p>Committed to sustainable sourcing and environmentally friendly production methods.</p>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+        </section>
+
+        <section class="why-loacker bg-section">
+            <div class="container">
+            <div class="section-title">
+                <h2  data-aos="fade-down" data-aos-duration="1000">Our Products</h2>
+                <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
+            </div>
+            <div class="row">
+                <!-- <div class="">
+                    <p class="fs-5">
+                        We’ve come a long way from our beginnings in 1868. While the Original Red Pepper Sauce stays true to the history of TABASCO® Brand, the TABASCO® Family of Flavors features 8 varieties of high-quality pepper sauces. From mild to wild, there’s something for everyone.
+                    </p>
+                </div> -->
+                <div class="col-md-6 px-lg-5">
+                    <div id="productRangeCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicators -->
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                          <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+
+                        </div>
+                      
+                        <!-- Carousel Items -->
+                        <div class="carousel-inner py-4 px-2 rounded shadow-none">
+                      
+                          <!-- Slide 1 -->
+                          <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                              <div class="col-md-6 col-lg-12">
+                                <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                  <img src="assets/images/products/Davidoff/Instant Coffee/Crema Intense/Front .jpg" class="card-img-top-products" alt="Davidoff Crema Intense Instant Coffee">
+                                  <div class="card-body pb-0 w-100">
+                                    <div class="row align-items-center w-100">
+                                      <!-- Product Info -->
+                                      <div class="col-md-9 text-start">
+                                        <h3 class="fs-6 fw-normal mb-0">Davidoff Crema Intense Instant Coffee</h3>
+                                        <small class="mb-0 color-davidoff fw-bold">
+                                            Smooth & Rounded
+                                        </small>
+                                      </div>
+                                
+                                      <!-- Heat Level Image + SHU -->
+                                      <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                            <div class="fw-normal text-dark small">Intensity</div>
+                                            <div class="fw-semibold text-dark small">9/12</div>
+
+                                        </div>
+                                    </div>
+                                  </div>
+                                
+                                  <div class="card-footer border-0 bg-white pt-3">
+                                    <p class="mb-0 small text-muted fst-italic text-start product-dec">Masterfully blended: Made with 100% Arabica beans from the best-growing regions, enjoy the taste of an aromatic, full-bodied espresso and its inimitable scent and aroma.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 2 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                      <img src="assets/images/products/Davidoff/Instant Coffee/Espresso/Front .jpg" class="card-img-top-products" alt="Davidoff Espresso 57 Instant Coffee">
+                                      <div class="card-body pb-0 w-100">
+                                        <div class="row align-items-center w-100">
+                                          <!-- Product Info -->
+                                          <div class="col-md-9 text-start">
+                                            <h3 class="fs-6 fw-normal mb-0">Davidoff Espresso 57 Instant Coffee</h3>
+                                            <small class="mb-0 color-davidoff fw-bold">
+                                                Dark & Chocolatey
+                                            </small>
+                                          </div>
+                                    
+                                          <!-- Heat Level Image + SHU -->
+                                          <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                                <div class="fw-normal text-dark small">Intensity</div>
+                                                <div class="fw-semibold text-dark small">11/12</div>
+    
+                                            </div>
+                                        </div>
+                                      </div>
+                                    
+                                      <div class="card-footer border-0 bg-white pt-3">
+                                        <p class="mb-0 small text-muted fst-italic text-start product-dec">A distinct and multi-layered taste: Indulge in a high-quality coffee that perfectly balances roasting time and temperature to create an intense yet smooth aroma.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 3 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                        <img src="assets/images/products/Davidoff/Instant Coffee/Rich Aroma/DV100CRA0749- 1.jpg" class="card-img-top-products" alt="Davidoff Rich Aroma Instant Coffee">
+                                        <div class="card-body pb-0 w-100">
+                                            <div class="row align-items-center w-100">
+                                            <div class="col-md-9 text-start">
+                                              <h3 class="fs-6 fw-normal mb-0">Davidoff Rich Aroma Instant Coffee</h3>
+                                              <small class="mb-0 color-davidoff fw-bold">
+                                                Vivid & Spicy
+                                              </small>
+                                            </div>
+                                      
+                                            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                                  <div class="fw-normal text-dark small">Intensity</div>
+                                                  <div class="fw-semibold text-dark small">10/12</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      
+                                        <div class="card-footer border-0 bg-white pt-3">
+                                          <p class="mb-0 small text-muted fst-italic text-start product-dec">Vivid, captivating and complex: Indulge in a high-quality coffee full of character with a pleasant acidity and spicy undertones.
+                                          </p>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 4 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                        <img src="assets/images/products/Davidoff/Instant Coffee/Fine Aroma/front.jpg" class="card-img-top-products" alt="Davidoff Fine Aroma Instant Coffee">
+                                        <div class="card-body pb-0 w-100">
+                                            <div class="row align-items-center w-100">
+                                            <div class="col-md-9 text-start">
+                                              <h3 class="fs-6 fw-normal mb-0">Davidoff Fine Aroma Instant Coffee</h3>
+                                              <small class="mb-0 color-davidoff fw-bold">
+                                                Elegant & Fragrant
+                                              </small>
+                                            </div>
+                                      
+                                            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                                  <div class="fw-normal text-dark small">Intensity</div>
+                                                  <div class="fw-semibold text-dark small">7/12</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      
+                                        <div class="card-footer border-0 bg-white pt-3">
+                                          <p class="mb-0 small text-muted fst-italic text-start product-dec">A fine blend that exudes elegance: Indulge in a medium bodied high-quality coffee which serves a smooth, mild taste and a delicate aroma in every cup.
+                                          </p>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Slide 5 -->
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                        <img src="assets/images/products/Davidoff/Instant Coffee/Brazil 1500/Front.jpg" class="card-img-top-products" alt="Davidoff Origins Brazil Flavour Instant Coffee">
+                                        <div class="card-body pb-0 w-100">
+                                            <div class="row align-items-center w-100">
+                                            <div class="col-md-9 text-start">
+                                              <h3 class="fs-6 fw-normal mb-0">Davidoff Origins Brazil Flavour Instant Coffee</h3>
+                                              <small class="mb-0 color-davidoff fw-bold">
+                                                Rich & Balanced
+                                              </small>
+                                            </div>
+                                      
+                                            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                                  <div class="fw-normal text-dark small">Intensity</div>
+                                                  <div class="fw-semibold text-dark small">8/12</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      
+                                        <div class="card-footer border-0 bg-white pt-3">
+                                          <p class="mb-0 small text-muted fst-italic text-start product-dec">Flatter your palate: Indulge in a high-quality coffee that delights with its rich body, gentle sweetness and fine nutty notes topped off with a pleasant creaminess.
+                                          </p>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                        <img src="assets/images/products/Davidoff/Instant Coffee/Decaf/front.png" class="card-img-top-products" alt="Davidoff Decaf Elegant Instant Coffee">
+                                        <div class="card-body pb-0 w-100">
+                                            <div class="row align-items-center w-100">
+                                            <div class="col-md-9 text-start">
+                                              <h3 class="fs-6 fw-normal mb-0">Davidoff Decaf Elegant Instant Coffee</h3>
+                                              <small class="mb-0 color-davidoff fw-bold">
+                                                Velvety & Delightful
+                                              </small>
+                                            </div>
+                                      
+                                            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                                  <div class="fw-normal text-dark small">Intensity</div>
+                                                  <div class="fw-semibold text-dark small">6/12</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      
+                                        <div class="card-footer border-0 bg-white pt-3">
+                                          <p class="mb-0 small text-muted fst-italic text-start product-dec">Decaf Elegant is a testament to DAVIDOFF CAFÉ's relentless pursuit of perfection. Crafted from 100% Arabica coffee beans, gently decaffeinated, this coffee boasts a lively, full-bodied aroma complemented by smooth caramel notes, achieving a balance seldom found in decaf offerings. This exquisite blend is the culmination of an artful composition, medium-roasted to perfection, resulting in a coffee that is both vibrant and indulgent. 
+                                          </p>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                        <img src="assets/images/products/Davidoff/Instant Coffee/Colombia/529496_529497_DVC Origins Colombia 90g IP_front.jpg" class="card-img-top-products" alt="Davidoff Decaf Elegant Instant Coffee">
+                                        <div class="card-body pb-0 w-100">
+                                            <div class="row align-items-center w-100">
+                                                <div class="col-md-9 text-start">
+                                                    <h3 class="fs-6 fw-normal mb-0">Davidoff Columbia</h3>
+                                                    <small class="mb-0 color-davidoff fw-bold">
+                                                        Intense & Indulgent
+                                                    </small>
+                                                </div>
+                                      
+                                                <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                                    <div class="fw-normal text-dark small">Intensity</div>
+                                                    <div class="fw-semibold text-dark small">11/12</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="card-footer border-0 bg-white pt-3">
+                                          <p class="mb-0 small text-muted fst-italic text-start product-dec">Davidoff origins Colombia amazes with a taste as distinctive and vivid as the region itself. This bold and full-bodied blend is characterised by an intense complex profile of hazelnut & cocoa. Join our coffee experts on their journey with Davidoff Origins and savor Colobia in every cup.
+                                          </p>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                          </div>
+                      
+                          <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                                        <img src="assets/images/products/Davidoff/Instant Coffee/Espresso/Front .jpg" class="card-img-top-products" alt="Davidoff Espresso 57">
+                                        <div class="card-body pb-0 w-100">
+                                          <div class="row align-items-center w-100">
+                                            <div class="col-md-9 text-start">
+                                              <h3 class="fs-6 fw-normal mb-0">Davidoff Espresso 57</h3>
+                                              <small class="mb-0 color-davidoff fw-bold">
+                                                Dark & Chocolatey
+                                              </small>
+                                            </div>
+                                      
+                                            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                                  <div class="fw-normal text-dark small">Intensity</div>
+                                                  <div class="fw-semibold text-dark small">11/12</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      
+                                        <div class="card-footer border-0 bg-white pt-3">
+                                          <p class="mb-0 small text-muted fst-italic text-start product-dec">A distinct and multi-layered taste: Indulge in a high-quality coffee that perfectly balances roasting time and temperature to create an intense yet smooth aroma</p>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productRangeCarousel" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productRangeCarousel" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                      
+                      
+                </div>
+            
+                <div class="col-md-6 reason-list">
+                    <p class="fs-5 text-start p-lg-3 mt-2">
+                        We’ve come a long way from our beginnings in 1868. While the Original Red Pepper Sauce stays true to the history of TABASCO® Brand, the TABASCO® Family of Flavors features 8 varieties of high-quality pepper sauces. From mild to wild, there’s something for everyone.
+                    </p>
+                </div>
+
+                <!-- <div class="col-md-6 reason-list">
+                    <div class="text-start mb-3">
+                        <h6 class="text-dark fs-5 ls-15 fw-bold">
+                            SKUs
+                        </h6>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-cookie-bite fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Classic Wafers</h3>
+                            <p class="mb-0 text-muted">Vanilla, Hazelnut, and Chocolate flavors in 45g, 90g, 175g packs.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-th-large fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Quadro Napolitaner</h3>
+                            <p class="mb-0 text-muted">Bite-sized wafer cubes, ideal for sharing. Comes in 125g, 250g pouches.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-grip-lines-vertical fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Wafer Fingers</h3>
+                            <p class="mb-0 text-muted">Individually wrapped snack bars in multipacks—perfect for on-the-go!</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-candy-cane fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Chocolate Coated Wafers</h3>
+                            <p class="mb-0 text-muted">Premium coated wafers with dark, milk, or white chocolate options.</p>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                        <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
+                            <i class="fas fa-box-open fs-3 color-loacker"></i>
+                        </div>
+                        <div class="ms-5">
+                            <h3 class="h5 fw-normal mb-2">Minis Multipacks</h3>
+                            <p class="mb-0 text-muted">Assorted mini wafers in packs of 10, 15, and 20—great for gifting or school tiffins.</p>
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4>Pure Ingredients</h4>
+                        <p>We use only natural ingredients with no artificial additives, colorings, or preservatives.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h4>Craftsmanship</h4>
+                        <p>Almost 100 years of experience in creating the perfect wafer recipes and techniques.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-loacker-item">
+                        <div class="why-loacker-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h4>Sustainability</h4>
+                        <p>Committed to sustainable sourcing and environmentally friendly production methods.</p>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+        </section>
+
+        <section class="bg-white mt-3">
+            <div class="container">
+                <div class="bg-white border-warning shadow-sm p-4 rounded text-start" data-aos="fade-up">
+                    <h5 class="fw-normal  color-davidoff mb-2 ls-15 lead">
+                      <i class="fas fa-info-circle me-2"></i>Note / Disclaimer
+                    </h5>
+                    <p class="mb-0 text-muted">
+                      To know more about <span class=" color-davidoff">Davidoff Café</span>, please visit us at 
+                      <a href="https://www.zinodavidoff.com/coffee" target="_blank" class="fw-normal ls-5 color-davidoff">zinodavidoff.com/coffee</a> 
+                      or follow us on:
+                      <br>
+                      Instagram – 
+                      <a href="https://www.instagram.com/zinodavidoff/" target="_blank" class="fw-normal ls-5 color-davidoff">instagram.com/zinodavidoff</a>, 
+                      Facebook – 
+                      <a href="https://www.facebook.com/zinodavidoff/" target="_blank" class="fw-normal ls-5  color-davidoff">facebook.com/zinodavidoff</a>, 
+                      YouTube – 
+                      <a href="https://www.youtube.com/user/DavidoffTheOfficia" target="_blank" class="fw-normal ls-5  color-davidoff">youtube.com/DavidoffTheOfficia</a>.
+                    </p>
+                  </div>
+                  
+          
+              
+            </div>
+        </section>
+
+
+        
+    </main>
+    <!-- Footer -->
+    <footer class="udi-footer">
+        <div class="container">
+            <div class="row justify-content-between mb-3">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <img src="assets/images/Logos/udi/udi-white1.png" alt="Company Logo" class="mb-4 w-50">
+                     <!-- <div class="display-5 fw-bold">
+                        UDI
+                     </div> -->
+                    <!-- <p class="mb-4">United Distributors India, F5, PINNACLE BUSINESS PARK, 9A, Mahakali Caves Rd, Shanti Nagar, Andheri East, Mumbai, Maharashtra 400093.</p> -->
+                    <div class="udi-social-icons">
+                        <a href="https://www.facebook.com/uniteddistributorsindia/" class="udi-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <!-- <a href="#" class="udi-social-icon"><i class="fab fa-twitter"></i></a> -->
+                        <a href="https://www.instagram.com/udi.india/" class="udi-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://in.linkedin.com/company/uniteddistributorsindia" class="udi-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="udi-footer-title">Quick Links</h5>
+                    <ul class="udi-footer-links">
+                        <li><a href="About-us.html" target="_blank" class="udi-ftr-link text-white">About Us</a></li>
+                        <li><a href="Excellency.html" target="_blank"  class="udi-ftr-link text-white">Excellence In Distribution</a></li>
+                        <li><a href="Portfolio.html" target="_blank"  class="udi-ftr-link text-white">Portfolio</a></li>
+                        <li><a href="Contact-us.html" target="_blank"  class="udi-ftr-link text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <!-- <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="udi-footer-title">Secters</h5>
+                    <ul class="udi-footer-links">
+                        <ul class="udi-footer-links list-unstyled">
+        <li><a href="#"class="udi-ftr-link text-white">Food & Confectionery</a></li>
+        <li><a href="#"class="udi-ftr-link text-white">Condiments & Culinary</a></li>
+        <li><a href="#"class="udi-ftr-link text-white">Personal Care</a></li>
+        <li><a href="#"class="udi-ftr-link text-white">Beverages</a></li>
+    </ul>
+                    </ul>
+                </div> -->
+                
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="udi-footer-title">Contact Information</h5>
+                    <ul class="udi-footer-links">
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                            <span>Mumbai, India</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-phone me-3 mt-1"></i>
+                            <span>+91 9820178720</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-envelope me-3 mt-1"></i>
+                            <span>info@udiindia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="udi-copyright text-center my-2">
+                <p class="mb-0">&copy; 2025 United Distributors India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Ensure smooth carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('#productRangeCarousel');
+            const carouselInstance = new bootstrap.Carousel(carousel, {
+                interval: 4000,
+                wrap: true,
+                touch: true
+            });
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    carouselInstance.prev();
+                } else if (e.key === 'ArrowRight') {
+                    carouselInstance.next();
+                }
+            });
+            
+            // Pause on hover
+            carousel.addEventListener('mouseenter', function() {
+                carouselInstance.pause();
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                carouselInstance.cycle();
+            });
+        });
+    </script>
+    <script>
+        const observer1Options = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+    
+        const observer1 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observer1Options);
+    
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer1.observe(el);
+        });
+    
+        document.querySelectorAll('.fade-in').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.1}s`;
+        });
+    
+        function animateCounter1(element, target) {
+            const duration = 2000;
+            const startTime = performance.now();
+    
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * target);
+                
+                element.textContent = current + (target === 195 ? '' : '+');
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+    
+            requestAnimationFrame(updateCounter);
+        }
+    
+        const statsObserver1 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    const targets = [150, 195, 36, 3];
+    
+                    statNumbers.forEach((el, index) => {
+                        setTimeout(() => {
+                            animateCounter1(el, targets[index]);
+                        }, index * 200);
+                    });
+    
+                    statsObserver1.unobserve(entry.target);
+                }
+            });
+        });
+    
+        statsObserver1.observe(document.querySelector('.stats-section'));
+    </script>
+    
+    <script>
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    
+                    // Animate progress circles
+                    const progressCircle = entry.target.querySelector('.progress-circle');
+                    if (progressCircle) {
+                        setTimeout(() => {
+                            const arc = progressCircle.querySelector('.progress-arc');
+                            arc.style.strokeDashoffset = '70';
+                        }, 300);
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animate-on-scroll elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize progress circles with full offset
+        document.querySelectorAll('.progress-arc').forEach(arc => {
+            arc.style.strokeDashoffset = '283';
+        });
+    </script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simple validation
+            if (!formData.email.includes('@') || !formData.email.includes('.')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            // In a real application, you would send this data to your server
+            console.log('Form submitted:', formData);
+            
+            // Show success message and reset form
+            alert('Thank you for your message! We will be in touch soon.');
+            document.getElementById('contactForm').reset();
+            
+            return false;
+        }
+        
+        // Optional: Add animation to cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.contact-card');
+            
+            function checkScroll() {
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                cards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    
+                    if (cardTop < triggerBottom) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initialize card styles
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Check on load and scroll
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+    <script>
+        AOS.init({
+            once: false
+        });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
