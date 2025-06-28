@@ -1,0 +1,42 @@
+Resoconto pacchetto
+
+-----------------------------------------------------------------------------
+Documento: 
+Nome: 63xxxx BA Sockel Quadratini 54g.pdf
+Metodo colore: Colore CMYK
+Profilo colore:  nessuno
+Unitˆ righelli: millimetri
+Dimensioni tavola disegno: 1491,3009 mm x 819,4524 mm
+Mostra immagini con metodo contorno: NO
+Evidenzia font sostituiti: NO
+Evidenzia glifi sostituiti: NO
+Mantieni testo modificabile
+Simula carta colorata: NO
+
+-----------------------------------------------------------------------------
+Oggetti in tinta piatta: 
+Crease (CMYK)
+Cut (CMYK)
+Rosso Loacker (CMYK)
+
+-----------------------------------------------------------------------------
+Font mancanti:NESSUNO
+
+-----------------------------------------------------------------------------
+Font protetti non inclusi nel pacchetto:NESSUNO
+
+-----------------------------------------------------------------------------
+Font: 
+NESSUNO
+
+-----------------------------------------------------------------------------
+Font incorporati:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Collegamenti mancanti:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Immagini collegate: 
+NESSUNO

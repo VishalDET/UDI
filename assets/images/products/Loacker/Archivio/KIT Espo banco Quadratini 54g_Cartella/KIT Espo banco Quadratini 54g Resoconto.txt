@@ -1,0 +1,77 @@
+Resoconto pacchetto
+
+-----------------------------------------------------------------------------
+Documento: 
+Nome: 6xxxxx KIT Espo banco Quadratini 54g.pdf
+Metodo colore: Colore CMYK
+Profilo colore:  nessuno
+Unitˆ righelli: millimetri
+Dimensioni tavola disegno: 920,3436 mm x 744,8445 mm
+Mostra immagini con metodo contorno: NO
+Evidenzia font sostituiti: NO
+Evidenzia glifi sostituiti: NO
+Mantieni testo modificabile
+Simula carta colorata: NO
+
+-----------------------------------------------------------------------------
+Oggetti in tinta piatta: 
+Annotation (CMYK)
+Crease (CMYK)
+Cut (CMYK)
+Dieline (CMYK)
+Dimensions and text (CMYK)
+Glue (CMYK)
+Print images (CMYK)
+Rosso Loacker (CMYK)
+Tool 2 (CMYK)
+Tool 3 (CMYK)
+
+-----------------------------------------------------------------------------
+Font mancanti:NESSUNO
+
+-----------------------------------------------------------------------------
+Font protetti non inclusi nel pacchetto:
+Aktiv Grotesk Cd SemiBold (Adobe Fonts)
+Aktiv Grotesk Cd Bold (Adobe Fonts)
+Aktiv Grotesk Cd XBold (Adobe Fonts)
+
+-----------------------------------------------------------------------------
+Font: 
+Arial (OTF)
+
+-----------------------------------------------------------------------------
+Font incorporati:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Collegamenti mancanti:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Immagini collegate: 
+
+/Volumes/Lavori in corso/Packaging 2020/¥ ESPOSITORI/6xxxxx KIT Espo banco Quadratini 54g/links/Loacker-Quadratini-Hazelnut-Lifestyle-01-H_mod.psd
+Tipo: CMYK trasparente
+Bit per pixel: 40
+Canali: 5
+Dimensione: 326977K, 9449 per 7087 pixel
+Dimensioni: 1463,952 per 1098,003 punti 
+Risoluzione: 464,72 per 464,72 pixel per pollice
+
+
+/Volumes/Lavori in corso/Packaging 2020/¥ ESPOSITORI/xxxxxxxx Espo Quadratini 54g/link/Loacker-Quadratini-Hazelnut-Lifestyle-01-H.psd
+Tipo: CMYK trasparente
+Bit per pixel: 40
+Canali: 5
+Dimensione: 209467K, 8020 per 5349 pixel
+Dimensioni: 564,347 per 376,396 punti 
+Risoluzione: 1023,2 per 1023,2 pixel per pollice
+
+
+/Volumes/Lavori in corso/Packaging 2020/¥ ESPOSITORI/6xxxxx KIT Espo banco Quadratini 54g/links/Loacker-Quadratini-Hazelnut-Lifestyle-01-H_mod.psd
+Tipo: CMYK trasparente
+Bit per pixel: 40
+Canali: 5
+Dimensione: 326977K, 9449 per 7087 pixel
+Dimensioni: 1463,952 per 1098,003 punti 
+Risoluzione: 464,72 per 464,72 pixel per pollice

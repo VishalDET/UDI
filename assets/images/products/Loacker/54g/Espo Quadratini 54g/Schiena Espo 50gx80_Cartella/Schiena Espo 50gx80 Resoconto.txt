@@ -1,0 +1,44 @@
+Resoconto pacchetto
+
+-----------------------------------------------------------------------------
+Documento: 
+Nome: 635958 Schiena Wrappy 50gx80.pdf
+Metodo colore: Colore CMYK
+Profilo colore:  nessuno
+Unitˆ righelli: millimetri
+Dimensioni tavola disegno: 730,992 mm x 364,001 mm
+Mostra immagini con metodo contorno: NO
+Evidenzia font sostituiti: NO
+Evidenzia glifi sostituiti: NO
+Mantieni testo modificabile
+Simula carta colorata: NO
+
+-----------------------------------------------------------------------------
+Oggetti in tinta piatta: 
+Annotation5 (CMYK)
+Cut (CMYK)
+Dimensions and text (CMYK)
+Print images (CMYK)
+Rosso Loacker (CMYK)
+
+-----------------------------------------------------------------------------
+Font mancanti:NESSUNO
+
+-----------------------------------------------------------------------------
+Font protetti non inclusi nel pacchetto:NESSUNO
+
+-----------------------------------------------------------------------------
+Font: 
+Arial (OTF)
+
+-----------------------------------------------------------------------------
+Font incorporati:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Collegamenti mancanti:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Immagini collegate: 
+NESSUNO

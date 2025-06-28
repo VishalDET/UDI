@@ -1,0 +1,45 @@
+Resoconto pacchetto
+
+-----------------------------------------------------------------------------
+Documento: 
+Nome: 63xxxx BA Tray Quadratini 54g.pdf
+Metodo colore: Colore CMYK
+Profilo colore:  nessuno
+Unitˆ righelli: millimetri
+Dimensioni tavola disegno: 1476,4901 mm x 1175 mm
+Mostra immagini con metodo contorno: NO
+Evidenzia font sostituiti: NO
+Evidenzia glifi sostituiti: NO
+Mantieni testo modificabile
+Simula carta colorata: NO
+
+-----------------------------------------------------------------------------
+Oggetti in tinta piatta: 
+Crease (CMYK)
+Cut (CMYK)
+Dimensions and text (CMYK)
+Print images (CMYK)
+Rosso Loacker (CMYK)
+Tool 2 (CMYK)
+
+-----------------------------------------------------------------------------
+Font mancanti:NESSUNO
+
+-----------------------------------------------------------------------------
+Font protetti non inclusi nel pacchetto:NESSUNO
+
+-----------------------------------------------------------------------------
+Font: 
+Arial (OTF)
+
+-----------------------------------------------------------------------------
+Font incorporati:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Collegamenti mancanti:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Immagini collegate: 
+NESSUNO
