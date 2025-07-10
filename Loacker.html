@@ -15,11 +15,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link src="assets/why.css" rel="stylesheet">
-    <script src="assets/script.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://db.onlinewebfonts.com/c/54993c5e76edc6f01a170163891279ff?family=Vanitas-Extrabold" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <style>
+        <script src="assets/script.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <link href="https://db.onlinewebfonts.com/c/54993c5e76edc6f01a170163891279ff?family=Vanitas-Extrabold" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+        <style>
        
         .product-card {
             border: none;
@@ -354,39 +354,54 @@
         /* #productRangeCarousel .carousel-indicators [data-bs-target]{
             background-color: #000427;
         } */
-    </style>
+        </style>
 
 </head>
 <body>
-    <!-- Navigation -->
-    <header class="udi-header">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <!-- Logo -->
-                <a href="/" class="udi-logo-container">
-                    <!-- <strong class="headings display-5 text-udi">UDI</strong> -->
-                    <img src="assets/images/Logos/udi/udi.png" alt="UDI Logo" class="udi-logo w-100">
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <nav class="d-none d-lg-block">
-                    <ul class="list-unstyled d-flex mb-0 gap-3">
-                        <li><a href="Index.html" class="udi-nav-link active ls-2 text-uppercase">Home</a></li>
-                        <li><a href="About-us.html" class="udi-nav-link ls-2 text-uppercase">About Us</a></li>
-                        <li><a href="Portfolio.html" class="udi-nav-link ls-2 text-uppercase">Portfolio</a></li>
-                        <li><a href="Excellency.html" class="udi-nav-link ls-2 text-uppercase">Excellency</a></li>
-                        <li><a href="Contact-us.html" class="udi-nav-link ls-2 text-uppercase">Contact Us</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Mobile Hamburger Button -->
-                <button class="udi-hamburger d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                    <i class="fas fa-bars fa-lg"></i>
-                </button>
-            </div>
+  <header class="udi-header">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <a href="/" class="udi-logo-container">
+                <!-- <strong class="headings display-5 text-udi">UDI</strong> -->
+                <img id="udi-header-logo" src="assets/images/Logos/udi/udi-white3.png" alt="UDI Logo" class="udi-logo w-100 ">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="d-none d-lg-block">
+                <ul class="list-unstyled d-flex mb-0 gap-3">
+                    <li><a href="Index.html" class="udi-nav-link active ls-2 text-uppercase">Home</a></li>
+                    <li><a href="About-us.html" class="udi-nav-link ls-2 text-uppercase">About Us</a></li>
+                    <li><a href="Portfolio.html" class="udi-nav-link ls-2 text-uppercase">Portfolio</a></li>
+                    <li><a href="Excellency.html" class="udi-nav-link ls-2 text-uppercase">Excellency</a></li>
+                    <li><a href="Contact-us.html" class="udi-nav-link ls-2 text-uppercase">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Hamburger Button -->
+            <button class="udi-hamburger d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
         </div>
-    </header>
+    </div>
+</header>
 
+<!-- Mobile Off-Canvas Menu -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-unstyled">
+            <li class="mb-3"><a href="Index.html" class="udi-nav-link active">Home</a></li>
+            <li class="mb-3"><a href="About-us.html" class="udi-nav-link">About Us</a></li>
+            <li class="mb-3"><a href="Excellency.html" class="udi-nav-link">Excellency</a></li>
+            <li class="mb-3"><a href="Portfolio.html" class="udi-nav-link">Portfolio</a></li>
+            <li class="mb-3"><a href="Contact-us.html" class="udi-nav-link">Contact Us</a></li>
+        </ul>
+    </div>
+</div>
     <!-- Hero Banner -->
     <section class="brand-hero">
         <img src="assets/images/Logos/loacker/Loacker 1920 x 490px final.jpg" alt="" srcset="" class="rounded" />
@@ -486,7 +501,7 @@
                             </p>
                           </div>
                         </div>
-                      </div>
+                    </div>
                       
                 </div>
                 
@@ -532,97 +547,96 @@
                 <!-- <p class="lead"  data-aos="fade-up" data-aos-duration="1000">About Us</p> -->
             </div>
             <div class="row">
-                <div class="col-md-6 reason-list">
-                    <div class="loacker-collage">
-                        <img src="assets/images/products/Loacker/tin Chocolate.jpg" alt="">
-                        <img src="assets/images/products/Loacker/tin all in one.jpg" alt="">
-                        <img src="assets/images/products/Loacker/tin Chocolate.jpg" alt="">
-                      </div>
-                      
-                </div>
-                <div class="col-md-6 reason-list">
-
+              <div class="row g-4">
                 <!-- Quadratini -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-th-large fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Quadratini</h3>
+                <div class="col-lg-4 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media/sc/4232d002-2f08-4974-a922-3ed71c9767a1.__CR0,0,220,220_PT0_SX220_V1___.jpg" alt="Quadratini" class="img-fluid mb-2">
+                    <h3 class="usp-title">Quadratini</h3>
+                    <p class="usp-description text-muted">
+                      These bite-sized, crunchy cubes with five light, crispy wafers and four layers of the smoothest cream filling will tempt you to enjoy more than one of Loacker’s Quadratini wafer treats!
+                    </p>
                   </div>
                 </div>
               
                 <!-- Gardena -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-leaf fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Gardena</h3>
+                <div class="col-lg-4 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/gardena.jpg" alt="Gardena" class="img-fluid mb-2">
+                    <h3 class="usp-title">Gardena</h3>
+                    <p class="usp-description text-muted">
+                      This uniquely creamy wafer creation forms the perfect blend of the smoothest cream filling, light and crispy wafers and fine chocolate—creating an extremely harmonious pleasure.
+                    </p>
                   </div>
                 </div>
               
                 <!-- Minis -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-box-open fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Minis</h3>
+                <div class="col-lg-4 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/minis.jpg" alt="Minis" class="img-fluid mb-2">
+                    <h3 class="usp-title">Minis</h3>
+                    <p class="usp-description text-muted">
+                      The Classic Minis, in their practical small size, are the perfect companion throughout the day. They win you over with their three delicious layers of tenderly melting cream filling and four light, crispy wafers!
+                    </p>
                   </div>
                 </div>
               
-                <!-- Chocolate Bars -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="250">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-bars fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Chocolate Bars</h3>
+                <!-- Chocolate Bar -->
+                <div class="col-lg-3 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/chocolate-bar.jpg" alt="Chocolate Bar" class="img-fluid mb-2">
+                    <h3 class="usp-title">Chocolate Bar</h3>
+                    <p class="usp-description text-muted">
+                      You will experience unique moments of pleasure with Loacker’s Chocolate Bars. Creamy, crisp, and full of delicious chocolate flavor—made of premium quality milk and fine ingredients.
+                    </p>
                   </div>
                 </div>
               
                 <!-- Classic -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-cookie-bite fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Classic</h3>
+                <div class="col-lg-3 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/classic.jpg" alt="Classic" class="img-fluid mb-2">
+                    <h3 class="usp-title">Classic</h3>
+                    <p class="usp-description text-muted">
+                      The secret to Loacker’s Classic Wafers’ success is based on natural ingredients and special recipes. Perfect for lunches and light snacks. 45g for self, 175g to share!
+                    </p>
                   </div>
                 </div>
               
                 <!-- Patisserie -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="350">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-birthday-cake fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Patisserie</h3>
+                <div class="col-lg-3 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/patisserie.jpg" alt="Patisserie" class="img-fluid mb-2">
+                    <h3 class="usp-title">Patisserie</h3>
+                    <p class="usp-description text-muted">
+                      Love at first bite! Gran Pasticceria Patisserie tantalizes the senses with light, crispy wafers, fine cream, and delicious chocolate glazing.
+                    </p>
                   </div>
                 </div>
               
                 <!-- Tortina -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-circle fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Tortina</h3>
-                  </div>
-                </div>
-              
-                <!-- Chocolates -->
-                <div class="d-flex mb-4 bg-white rounded-3 align-items-center p-2 position-relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="450">
-                  <div class="position-absolute top-50 translate-middle-y left-20 icons-at-loacker">
-                    <i class="fas fa-candy-cane fs-3 color-loacker"></i>
-                  </div>
-                  <div class="ms-5">
-                    <h3 class="h5 fw-normal mb-0">Chocolates</h3>
+                <div class="col-lg-3 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/tortina.jpg" alt="Tortina" class="img-fluid mb-2">
+                    <h3 class="usp-title">Tortina</h3>
+                    <p class="usp-description text-muted">
+                      A perfect creation full of finesse: Tortina has a core of light, crispy wafers and the finest hazelnut cream hidden underneath a delicious layer of chocolate.
+                    </p>
                   </div>
                 </div>
               
+                <!-- Chocolat -->
+                <div class="col-lg-3 col-md-6">
+                  <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/chocolat.jpg" alt="Chocolat" class="img-fluid mb-2">
+                    <h3 class="usp-title">Chocolat</h3>
+                    <p class="usp-description text-muted">
+                      Loacker’s Chocolat tantalizes the senses with light, crispy wafers and delicious chocolate glazing. Underneath: tenderly melting cream filling.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              
             </div>
             </div>
         </section>
@@ -891,72 +905,79 @@
     </main>
     <!-- Footer -->
     <footer class="udi-footer">
-        <div class="container">
-            <div class="row justify-content-between mb-3">
-                <!-- Company Info -->
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                    <img src="assets/images/Logos/udi/udi-white1.png" alt="Company Logo" class="mb-4 w-50">
-                     <!-- <div class="display-5 fw-bold">
-                        UDI
-                     </div> -->
-                    <!-- <p class="mb-4">United Distributors India, F5, PINNACLE BUSINESS PARK, 9A, Mahakali Caves Rd, Shanti Nagar, Andheri East, Mumbai, Maharashtra 400093.</p> -->
-                    <div class="udi-social-icons">
-                        <a href="https://www.facebook.com/uniteddistributorsindia/" class="udi-social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <!-- <a href="#" class="udi-social-icon"><i class="fab fa-twitter"></i></a> -->
-                        <a href="https://www.instagram.com/udi.india/" class="udi-social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="https://in.linkedin.com/company/uniteddistributorsindia" class="udi-social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="udi-footer-title">Quick Links</h5>
-                    <ul class="udi-footer-links">
-                        <li><a href="About-us.html" class="udi-ftr-link text-white">About Us</a></li>
-                        <li><a href="Excellency.html" class="udi-ftr-link text-white">Excellence In Distribution</a></li>
-                        <li><a href="Portfolio.html" class="udi-ftr-link text-white">Portfolio</a></li>
-                        <li><a href="Contact-us.html" class="udi-ftr-link text-white">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services -->
-                <!-- <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="udi-footer-title">Services</h5>
-                    <ul class="udi-footer-links">
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                    </ul>
-                </div> -->
-                
-                <!-- Contact Info -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="udi-footer-title">Contact Information</h5>
-                    <ul class="udi-footer-links">
-                        <li class="d-flex align-items-start mb-3">
-                            <i class="fas fa-map-marker-alt me-3 mt-1"></i>
-                            <span>Mumbai, India</span>
-                        </li>
-                        <li class="d-flex align-items-start mb-3">
-                            <i class="fas fa-phone me-3 mt-1"></i>
-                            <span>+91 9820178720</span>
-                        </li>
-                        <li class="d-flex align-items-start mb-3">
-                            <i class="fas fa-envelope me-3 mt-1"></i>
-                            <span>info@udiindia.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="udi-copyright text-center my-2">
-                <p class="mb-0">&copy; 2025 United Distributors India. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+      <div class="container">
+          <div class="row gy-4 justify-content-between">
+              <!-- Company Info -->
+              <div class="col-lg-3 col-md-6">
+                  <img src="assets/images/Logos/udi/udi1.png" alt="Company Logo" class="mb-4 w-50">
+                  <div class="udi-social-icons">
+                      <a href="https://www.facebook.com/uniteddistributorsindia/" class="udi-social-icon-ftr"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.instagram.com/udi.india/" class="udi-social-icon-ftr"><i class="fab fa-instagram"></i></a>
+                      <a href="https://in.linkedin.com/company/uniteddistributorsindia" class="udi-social-icon-ftr"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+              <div class="col-lg-2 col-md-6">
+                  <h5 class="udi-footer-title">Brands</h5>
+                  <ul class="udi-footer-links list-unstyled">
+                      <li><a href="About-us.html" target="_blank" class="udi-ftr-link">Loacker</a></li>
+                      <li><a href="Excellency.html" target="_blank" class="udi-ftr-link">Guylian</a></li>
+                      <li><a href="Portfolio.html" target="_blank" class="udi-ftr-link">Davidoff Cafe</a></li>
+                      <li><a href="Contact-us.html" target="_blank" class="udi-ftr-link">Tabasco </a></li>
+                  </ul>
+              </div>
+              <!-- Quick Links -->
+              <div class="col-lg-2 col-md-6">
+                  <h5 class="udi-footer-title">Quick Links</h5>
+                  <ul class="udi-footer-links list-unstyled">
+                      <li><a href="About-us.html" target="_blank" class="udi-ftr-link">About Us</a></li>
+                      <li><a href="Excellency.html" target="_blank" class="udi-ftr-link">Excellence In Distribution</a></li>
+                      <li><a href="Portfolio.html" target="_blank" class="udi-ftr-link">Portfolio</a></li>
+                      <li><a href="Contact-us.html" target="_blank" class="udi-ftr-link">Contact Us</a></li>
+                  </ul>
+              </div>
+          
+              <!-- Sectors -->
+              <div class="col-lg-2 col-md-6">
+                  <h5 class="udi-footer-title">Sectors</h5>
+                  <ul class="udi-footer-links list-unstyled">
+                      <li><a href="#" class="udi-ftr-link">Food & Confectionery</a></li>
+                      <li><a href="#" class="udi-ftr-link">Condiments & Culinary</a></li>
+                      <li><a href="#" class="udi-ftr-link">Personal Care</a></li>
+                      <li><a href="#" class="udi-ftr-link">Beverages</a></li>
+                  </ul>
+              </div>
+          
+              <!-- Contact Info -->
+              <div class="col-lg-3 col-md-6">
+                  <h5 class="udi-footer-title">Contact Information</h5>
+                  <ul class="udi-footer-links list-unstyled">
+                      <li class="d-flex align-items-start mb-3">
+                          <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                          <span>Mumbai, India</span>
+                      </li>
+                      <li class="d-flex align-items-start mb-3">
+                          <i class="fas fa-phone me-3 mt-1"></i>
+                          <span>+91 9820178720</span>
+                      </li>
+                      <li class="d-flex align-items-start mb-3">
+                          <i class="fas fa-envelope me-3 mt-1"></i>
+                          <span>info@udiindia.com</span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+              
+      </div>
+      
+  </footer>
+  <div class="px-0 bg-dark row my-0">
+      <div class="container">
+          <div class="udi-copyright text-center my-2 bg-dark">
+              <p class="mb-0">&copy; 2025 United Distributors India. All rights reserved.</p>
+          </div>
+      </div>
+      
+  </div>
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>

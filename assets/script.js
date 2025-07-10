@@ -1,12 +1,6 @@
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.udi-header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
 
+
+  
 document.addEventListener("DOMContentLoaded", function() {
     // Counter animation
     const counterElements = document.querySelectorAll('.achievement-number');
@@ -42,3 +36,47 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(counter);
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector('.udi-header');
+  const logo = document.querySelector('#udi-header-logo');
+  const navLinks = document.querySelectorAll('.udi-nav-link');
+
+  if (!header || !logo || navLinks.length === 0) return;
+
+  // Handle hover
+  header.addEventListener('mouseenter', function () {
+    navLinks.forEach(link => {
+      link.style.color = '#333'; // example hover color
+    });
+
+    // Only change logo if not scrolled
+    if (!header.classList.contains('scrolled')) {
+      logo.src = 'assets/images/Logos/udi/udi1.png';
+    }
+  });
+
+  header.addEventListener('mouseleave', function () {
+    navLinks.forEach(link => {
+      link.style.color = ''; // reset to original
+    });
+
+    // Restore logo based on scroll state
+    if (!header.classList.contains('scrolled')) {
+      logo.src = 'assets/images/Logos/udi/udi-white3.png';
+    }
+  });
+
+  // Handle scroll
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+      logo.src = 'assets/images/Logos/udi/udi1.png';
+    } else {
+      header.classList.remove('scrolled');
+      logo.src = 'assets/images/Logos/udi/udi-white3.png';
+    }
+  });
+});
+
+      
