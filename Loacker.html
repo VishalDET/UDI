@@ -149,7 +149,8 @@
                 margin-bottom: 20px;
             }
         }
-        .usp-card{background: white;
+        .usp-card{
+            background: white;
             border-radius: 20px;
             padding: 1.5rem;
             height: 100%;
@@ -181,7 +182,9 @@
         .usp-card:hover::before {
             transform: scaleX(1);
         }
-
+        .usp-card img{
+          border-radius: 4px;
+        }
         .usp-icon {
             width: 70px;
             height: 70px;
@@ -206,7 +209,8 @@
         .usp-description {
             color: #666;
             line-height: 1.6;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
+            text-align: justify;
         }
 
         .usp-list {
@@ -354,6 +358,19 @@
         /* #productRangeCarousel .carousel-indicators [data-bs-target]{
             background-color: #000427;
         } */
+        #productRangeCarouse2 .carousel-indicators [data-bs-target] {
+          background-color: #B71C1C20; /* Inactive dot color */
+          width: 29px;
+          height: 5px;
+          border-radius: 0%;
+          opacity: 0.5;
+          transition: opacity 0.3s ease;
+        }
+        
+        #productRangeCarouse2 .carousel-indicators .active {
+          background-color: #B71C1C; /* Active dot color */
+          opacity: 1;
+        }
         </style>
 
 </head>
@@ -549,9 +566,9 @@
             <div class="row">
               <div class="row g-4">
                 <!-- Quadratini -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Quadratini.jpg" alt="Quadratini" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Quadratini.jpg" alt="Quadratini" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Quadratini</h3> -->
                     <p class="usp-description text-muted">
                       These bite-sized, crunchy cubes with five light, crispy wafers and four layers of the smoothest cream filling will tempt you to enjoy more than one of Loacker’s Quadratini wafer treats!
@@ -560,9 +577,9 @@
                 </div>
               
                 <!-- Gardena -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Gardena.jpg" alt="Gardena" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Gardena.jpg" alt="Gardena" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Gardena</h3> -->
                     <p class="usp-description text-muted">
                       This uniquely creamy wafer creation forms the perfect blend of the smoothest cream filling, light and crispy wafers and fine chocolate—creating an extremely harmonious pleasure.
@@ -571,9 +588,9 @@
                 </div>
               
                 <!-- Minis -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Minis.jpg" alt="Minis" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Minis.jpg" alt="Minis" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Minis</h3> -->
                     <p class="usp-description text-muted">
                       The Classic Minis, in their practical small size, are the perfect companion throughout the day. They win you over with their three delicious layers of tenderly melting cream filling and four light, crispy wafers!
@@ -582,9 +599,9 @@
                 </div>
               
                 <!-- Chocolate Bar -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Chocolate-Bar.jpg" alt="Chocolate Bar" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Chocolate-Bar.jpg" alt="Chocolate Bar" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Chocolate Bar</h3> -->
                     <p class="usp-description text-muted">
                       You will experience unique moments of pleasure with Loacker’s Chocolate Bars. Creamy, crisp, and full of delicious chocolate flavor—made of premium quality milk and fine ingredients.
@@ -593,9 +610,9 @@
                 </div>
               
                 <!-- Classic -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Classic.jpg" alt="Classic" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Classic.jpg" alt="Classic" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Classic</h3> -->
                     <p class="usp-description text-muted">
                       The secret to Loacker’s Classic Wafers’ success is based on natural ingredients and special recipes. Perfect for lunches and light snacks. 45g for self, 175g to share!
@@ -604,9 +621,9 @@
                 </div>
               
                 <!-- Patisserie -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Patisserie.jpg" alt="Patisserie" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Patisserie.jpg" alt="Patisserie" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Patisserie</h3> -->
                     <p class="usp-description text-muted">
                       Love at first bite! Gran Pasticceria Patisserie tantalizes the senses with light, crispy wafers, fine cream, and delicious chocolate glazing.
@@ -615,9 +632,9 @@
                 </div>
               
                 <!-- Tortina -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Tortina.jpg" alt="Tortina" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Tortina.jpg" alt="Tortina" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Tortina</h3> -->
                     <p class="usp-description text-muted">
                       A perfect creation full of finesse: Tortina has a core of light, crispy wafers and the finest hazelnut cream hidden underneath a delicious layer of chocolate.
@@ -626,9 +643,9 @@
                 </div>
               
                 <!-- Chocolat -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                   <div class="usp-card" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/products/Loacker/Our-products/Chocolat.jpg" alt="Chocolat" class="img-fluid mb-2">
+                    <img src="assets/images/products/Loacker/Our-products/Chocolat.jpg" alt="Chocolat" class="img-fluid mb-2 w-100">
                     <!-- <h3 class="usp-title">Chocolat</h3> -->
                     <p class="usp-description text-muted">
                       Loacker’s Chocolat tantalize the senses with light, crispy wafers, the finest cream and delicious chocolate glazing. For chocolate lovers, we have covered our popular wafer classics in delicious chocolate. Underneath, there are light, crispy wafers and two layers of tenderly melting cream filling.                    </p>
@@ -652,13 +669,55 @@
                     <!-- Indicators -->
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                      <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                      <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                      <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                      <!-- <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                      <button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button> -->
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="12" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="13" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="14" aria-label="Slide 15"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="15" aria-label="Slide 16"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="16" aria-label="Slide 17"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="17" aria-label="Slide 18"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="18" aria-label="Slide 19"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="19" aria-label="Slide 20"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="20" aria-label="Slide 21"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="21" aria-label="Slide 22"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="22" aria-label="Slide 23"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="23" aria-label="Slide 24"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="24" aria-label="Slide 25"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="25" aria-label="Slide 26"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="26" aria-label="Slide 27"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="27" aria-label="Slide 28"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="28" aria-label="Slide 29"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="29" aria-label="Slide 30"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="30" aria-label="Slide 31"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="31" aria-label="Slide 32"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="32" aria-label="Slide 33"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="33" aria-label="Slide 34"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="34" aria-label="Slide 35"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="35" aria-label="Slide 36"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="36" aria-label="Slide 37"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="37" aria-label="Slide 38"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="38" aria-label="Slide 39"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="39" aria-label="Slide 40"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="40" aria-label="Slide 41"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="41" aria-label="Slide 42"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="42" aria-label="Slide 43"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="43" aria-label="Slide 44"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="44" aria-label="Slide 45"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="45" aria-label="Slide 46"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="46" aria-label="Slide 47"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="47" aria-label="Slide 48"></button>
+<button type="button" data-bs-target="#productRangeCarousel" data-bs-slide-to="48" aria-label="Slide 49"></button>
+
 
                     </div>
                   
@@ -691,6 +750,7 @@
                         </div>
                       </div>
 
+                      <!-- Slide 2 -->
                       <div class="carousel-item">
                         <div class="row justify-content-center">
                           <div class="col-md-6 col-lg-12">
@@ -716,6 +776,7 @@
                         </div>
                       </div>
                       
+                      <!-- Slide 3 -->
                       <div class="carousel-item">
                         <div class="row justify-content-center">
                           <div class="col-md-6 col-lg-12">
@@ -741,6 +802,7 @@
                         </div>
                       </div>
                       
+                      <!-- Slide 4 -->
                       <div class="carousel-item">
                         <div class="row justify-content-center">
                           <div class="col-md-6 col-lg-12">
@@ -766,6 +828,7 @@
                         </div>
                       </div>
 
+                      <!-- Slide 5 -->
                       <div class="carousel-item">
                         <div class="row justify-content-center">
                           <div class="col-md-6 col-lg-12">
@@ -791,6 +854,7 @@
                         </div>
                       </div>
 
+                      <!-- Slide 6 -->
                       <div class="carousel-item">
                         <div class="row justify-content-center">
                           <div class="col-md-6 col-lg-12">
@@ -815,6 +879,962 @@
                           </div>
                         </div>
                       </div>
+
+                      <!-- Slide 7 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g/Nepo.png" class="card-img-top-products" alt="Loacker Quadratini Napolitaner">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Napolitaner</h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 8 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g/chocolate.png" class="card-img-top-products" alt="Loacker. Quadratini  Chocolate">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Chocolate</h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 1-->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g/vanilla.png" class="card-img-top-products" alt="Loacker Quadratini Vanile">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Vanile</h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 10 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g/Dark Chocolate.jpg" class="card-img-top-products" alt="Loacker Quadratini Dark Chocolate">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Dark Chocolate </h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 11 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g/630477_000_IMG.png" class="card-img-top-products" alt="Loacker. Quadratini  Coconut">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Coconut</h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 12 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g/630475_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Cocoa and Milk">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Cocoa and Milk</h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 13 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g//630480_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Double Chocolate ">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Double Chocolate </h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 14 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/125g//630480_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Double Chocolate ">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <!-- Product Info -->
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Peanut Butter</h3>
+                                  </div>
+                            
+                                  <!-- Heat Level Image + SHU -->
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                        <div class="fw-normal text-danger small">125g</div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Product 15 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/220  250/630496_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Cappuccino">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Cappuccino</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">220g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                          <!-- Product 16 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/220  250/630504_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Italian Tiramisu">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Italian Tiramisu</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">220g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                          <!-- Product 17 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/220g/espresso.png" class="card-img-top-products" alt="Loacker Quadratini Espresso">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Espresso</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">220g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                          <!-- Product 18 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/220g/blueberry.png" class="card-img-top-products" alt="Loacker Quadratini Blueberry">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Blueberry</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">220g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                          <!-- Product 19 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/250g/napolitaner.png" class="card-img-top-products" alt="Loacker Quadratini Napolitaner">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Napolitaner</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">250g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                          <!-- Product 20 -->
+                      <div class="carousel-item">
+                            <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/250g/creankakao.png" class="card-img-top-products" alt="Loacker Quadratini Creankakao">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Creankakao</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">250g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                          <!-- Product 21 -->
+                      <div class="carousel-item">
+                            <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/220  250/630460_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Vanile">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Vanile</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">250g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                          <!-- Product 22 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/220  250/630444_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Dark Chocolate">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Dark Chocolate</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">250g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                          <!-- Product 23 -->
+                      <div class="carousel-item">
+                        <div class="row justify-content-center">
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+                              <img src="assets/images/products/Loacker/220  250/630432_000_IMG.png" class="card-img-top-products" alt="Loacker Quadratini Double Chocolate">
+                              <div class="card-body pb-0 w-100">
+                                <div class="row align-items-center w-100">
+                                  <div class="col-md-9 text-start">
+                                    <h3 class="fs-6 fw-normal mb-0">Loacker Quadratini Double Chocolate</h3>
+                                  </div>
+                                  <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+                                    <div class="fw-normal text-danger small">250g</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                       <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Crispy Dark.png" class="card-img-top-products" alt="Loacker Chocolate Bar Choco Crispy Dark Milk">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Chocolate Bar Choco Crispy Dark Milk</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">50g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 2 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/nepo.png" class="card-img-top-products" alt="Loacker Chocolate Bar Napolitaner Creme">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Chocolate Bar Napolitaner Creme</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">54g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 3 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Tortina mini.png" class="card-img-top-products" alt="Loacker Tortina Mini Original">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Tortina Mini Original</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">90g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 4 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Tortina Dark.png" class="card-img-top-products" alt="Loacker Gran Pasticceria Tortina Dark">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Gran Pasticceria Tortina Dark 21gx3</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">63g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 5 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Tortina ori.png" class="card-img-top-products" alt="Loacker Gran Pasticceria Tortina Original">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Gran Pasticceria Tortina Original 21gx3</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">63g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 6 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Tortina Triple.png" class="card-img-top-products" alt="Loacker Gran Pasticceria Tortina Triple Dark">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Gran Pasticceria Tortina Triple Dark 21gx3</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">63g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 7 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/gardena finger  p.png" class="card-img-top-products" alt="Loacker Gardenia Fingers Chocolate">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Gardenia Fingers Chocolate</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">125g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 8 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Hazelnut finger.png" class="card-img-top-products" alt="Loacker Gardenia Fingers Hazelnut">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Gardenia Fingers Hazelnut</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">125g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 9 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/finger" class="card-img-top-products" alt="Loacker Gardenia Fingers Peanut Butter">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Gardenia Fingers Peanut Butter</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">125g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 10 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Rose .png" class="card-img-top-products" alt="Loacker Rose of Dolomites Dark">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Rose of Dolomites Dark</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">100g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 11 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/milk creame.png" class="card-img-top-products" alt="Loacker Rose of Dolomites Milk">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Rose of Dolomites Milk</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">100g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 12 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/chocolate/Rose .png" class="card-img-top-products" alt="Loacker Rose of Dolomites Collection">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Rose of Dolomites Collection</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">150g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/90G/630384_000_IMG.png" class="card-img-top-products" alt="Loacker Classic Vanille">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Classic Vanille</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">175g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 14 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/175g/ClassicCreamKakao.png" class="card-img-top-products" alt="Loacker Classic Cream Kakao">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Classic Cream Kakao</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">175g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 15 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/MINI 45GM/nepo.png" class="card-img-top-products" alt="Loacker Classic Napolitaner">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Classic Napolitaner</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">175g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Product 16 -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/90G/630380_000_IMG.png" class="card-img-top-products" alt="Loacker Classic Double Chocolate">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Classic Double Chocolate</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">175g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Products 17–20: 90g Pack -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/90g/Creamkakao.png" class="card-img-top-products" alt="Loacker Creamkakao 90g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Creamkakao</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">90g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/90g/Napolitaner.png" class="card-img-top-products" alt="Loacker Napolitaner 90g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Napolitaner</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">90g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/90G/630384_000_IMG.png" class="card-img-top-products" alt="Loacker Vanilla 90g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Vanilla</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">90g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/90G/630380_000_IMG.png " class="card-img-top-products" alt="Loacker Double Chocolate 90g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Double Chocolate</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">90g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Products 21–24: 45g Pack -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/MINI 45GM/ProdWeb-1860055_int-en_packaged.png" class="card-img-top-products" alt="Loacker Creamkakao 45g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Creamkakao</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">45g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/MINI 45GM/nepo.png" class="card-img-top-products" alt="Loacker Napolitaner 45g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Napolitaner</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">45g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/MINI 45GM/ProdWeb-1860048_int-en_packaged.png" class="card-img-top-products" alt="Loacker Vanilla 45g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Vanilla</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">45g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/MINI 45GM/ProdWeb-1860051_int-en_packaged.png" class="card-img-top-products" alt="Loacker Double Chocolate 45g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Double Chocolate</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">45g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <!-- Products 25–27: Minis -->
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/150g/MinisAssorted.png" class="card-img-top-products" alt="Loacker Classic Minis Assorted 150g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Classic Minis Assorted</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">150g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/MINI 45GM/ProdWeb-1860056_int-en_packaged.png" class="card-img-top-products" alt="Loacker Classic Minis Vanilla 150g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Classic Minis Vanilla</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">150g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+                  <div class="carousel-item">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12">
+      <div class="card border-0 shadow-none h-100 text-center productRangeCarousel-card">
+        <img src="assets/images/products/Loacker/MINI 45GM/ProdWeb-1860055_int-en_packaged.png" class="card-img-top-products" alt="Loacker Classic Minis Creamkakao 150g">
+        <div class="card-body pb-0 w-100">
+          <div class="row align-items-center w-100">
+            <div class="col-md-9 text-start">
+              <h3 class="fs-6 fw-normal mb-0">Loacker Classic Minis Creamkakao</h3>
+            </div>
+            <div class="col-md-3 text-md-end text-start mt-3 mt-md-0">
+              <div class="fw-normal text-danger small">150g</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                  </div>
+
+
 
                     </div>
                   
@@ -843,6 +1863,7 @@
                 </div>
                 
             </div>
+
             <!-- <div class="row">
                 <div class="col-md-4">
                     <div class="why-loacker-item">
@@ -897,7 +1918,7 @@
                 </div>
               </div>
             </div>
-          </section>
+        </section>
 
 
         
