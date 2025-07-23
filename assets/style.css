@@ -103,9 +103,9 @@ body{
     padding: 0;
     color: #f9f9f9 !important;
     background-color: transparent;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* backdrop-filter: blur(2px); */
+    /* -webkit-backdrop-filter: blur(10px); */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .udi-header.scrolled .udi-nav-link {
@@ -1509,9 +1509,9 @@ textarea.form-control {
 
 .hero-section {
     /* background: url(https://img.freepik.com/free-vector/vector-white-gradient-background-modern-design_361591-4425.jpg?t=st=1743163538~exp=1743167138~hmac=9ff6e27cfbd1f673474684a2d2af28be7bc45f42e5c0aebe8223af11a0007f94&w=1380) center / cover no-repeat; */
-    background: url(../assets/images/hero-sec.jpg) center / cover no-repeat;
+    background: url(../assets/images/banners/udi/UDI\ Banners_05A.jpg) center / cover no-repeat;
     color:#f9f9f9;
-    padding: 120px 0 20px;
+    padding: 150px 0 100px;
     border-radius: 0 0 50px 50px;
 }
 
